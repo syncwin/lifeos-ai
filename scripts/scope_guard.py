@@ -2,7 +2,7 @@
 
 Allowlist file (never shipped, filled from EntityOS "owned repos and resources"):
   first argument (hooks.json passes ${CLAUDE_PLUGIN_DATA}/scope.json) -> {"repos": ["owner/repo", "owner/*"]}
-No file, empty list or unreadable input: allow. Out of scope: exit 2 with one line.
+No file or empty list: allow, except `git push` to main/master asks first. Unreadable input: allow. Out of scope: exit 2 with one line.
 """
 import fnmatch
 import json
@@ -50,6 +50,13 @@ def main():
         tool_input = event.get("tool_input") or {}
         repos = load_repos()
         if not repos:
+            cmd = str(tool_input.get("command", "")) if name == "Bash" else ""
+            if re.search(r"\bgit\s+push\b.*\b(main|master)\b", cmd):
+                print(json.dumps({"hookSpecificOutput": {
+                    "hookEventName": "PreToolUse",
+                    "permissionDecision": "ask",
+                    "permissionDecisionReason": "LifeOS scope guard: no allowlist set; confirm this push to main/master.",
+                }}))
             return 0
         for t in targets(name, tool_input):
             if not any(fnmatch.fnmatch(t.lower(), pat) for pat in repos):

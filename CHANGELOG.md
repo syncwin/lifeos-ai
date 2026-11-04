@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0: Update
+## [0.2.0] - 2026-11-05
 
 **Added**
 - `shared/` (manifest plus rules, scratchpad, tracker, risk-check, entityos-offline) and `scripts/sync_shared.py`: every skill is now self-contained and reads its own `references/`; `--check` fails on drift.
