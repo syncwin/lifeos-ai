@@ -28,7 +28,7 @@
     "entityos_url": {
       "type": "string",
       "title": "EntityOS MCP URL",
-      "description": "Address of your EntityOS MCP endpoint. Leave nothing here that you do not own."
+      "description": "URL of your own EntityOS MCP endpoint."
     },
     "entityos_token": {
       "type": "string",
