@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "entityos": {
+      "type": "http",
+      "url": "${user_config.entityos_url}",
+      "headers": {
+        "Authorization": "Bearer ${user_config.entityos_token}"
+      }
+    }
+  }
+}

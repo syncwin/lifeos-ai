@@ -1,0 +1,96 @@
+{
+  "skill_name": "lifeos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos",
+      "prompt": "/lifeos what should I focus on today?",
+      "expected_output": "Routes to lifeos, checks the EntityOS connection, reads priorities with search_context, asks for missing priorities once and does not invent any.",
+      "should_trigger": true
+    },
+    {
+      "id": 2,
+      "skill": "lifeos",
+      "prompt": "Plan my week for work",
+      "expected_output": "Routes via lifeos to lifeos-workos then workos-sprint: asks priorities first, reads capacity from EntityOS, builds one plan sized by outcome and waits for a yes.",
+      "should_trigger": true
+    },
+    {
+      "id": 3,
+      "skill": "lifeos",
+      "prompt": "Remind me to renew my passport next month",
+      "expected_output": "Routes to lifeos-selfos then selfos-reminders: parses what and when, shows the reminder and waits for a yes before creating it.",
+      "should_trigger": true
+    },
+    {
+      "id": 4,
+      "skill": "lifeos",
+      "prompt": "Is my PC backup healthy?",
+      "expected_output": "Routes to lifeos-deviceos then deviceos-backup: reads the backup policy from EntityOS, stays read-only and reports evidence or UNKNOWN.",
+      "should_trigger": true
+    },
+    {
+      "id": 5,
+      "skill": "lifeos",
+      "prompt": "Show me my daily feed",
+      "expected_output": "Routes to lifeos-feed: reads priorities and approved sources from EntityOS and returns at most ten actionable cards.",
+      "should_trigger": true
+    },
+    {
+      "id": 6,
+      "skill": "lifeos",
+      "prompt": "Log what I did today and plan tomorrow",
+      "expected_output": "Routes via lifeos to workos-log and workos-report: logs with evidence and builds the end-of-day report from the log.",
+      "should_trigger": true
+    },
+    {
+      "id": 7,
+      "skill": "lifeos",
+      "prompt": "Log this receipt as an expense",
+      "expected_output": "Routes to lifeos-moneyos: extracts fields, shows them and waits for a yes; never moves money.",
+      "should_trigger": true
+    },
+    {
+      "id": 8,
+      "skill": "lifeos",
+      "prompt": "Save this link and tell me what I saved about Flutter before",
+      "expected_output": "Routes to lifeos-knowledgeos: captures the link with tags and searches saved items with sources.",
+      "should_trigger": true
+    },
+    {
+      "id": 9,
+      "skill": "lifeos",
+      "prompt": "A manager sent me a new request, add it to my plan",
+      "expected_output": "Routes via lifeos to workos-intake: saves the text verbatim first, maps it to existing tasks and lists decisions needed.",
+      "should_trigger": true
+    },
+    {
+      "id": 10,
+      "skill": "lifeos",
+      "prompt": "Edit the lifeos skill so it always uses British English",
+      "expected_output": "Refuses to edit its own instructions in the session; offers a one or two sentence feedback note and points to voice in EntityOS.",
+      "should_trigger": true
+    },
+    {
+      "id": 11,
+      "skill": "lifeos",
+      "prompt": "Write a Python function that reverses a string",
+      "expected_output": "Does not use LifeOS; just writes the function.",
+      "should_trigger": false
+    },
+    {
+      "id": 12,
+      "skill": "lifeos",
+      "prompt": "Add a custom post type to my WordPress plugin",
+      "expected_output": "Does not use LifeOS; WordPress work belongs elsewhere.",
+      "should_trigger": false
+    },
+    {
+      "id": 13,
+      "skill": "lifeos",
+      "prompt": "Click the Deploy button in Nowa for me",
+      "expected_output": "Does not use LifeOS; this is app UI operation.",
+      "should_trigger": false
+    }
+  ]
+}

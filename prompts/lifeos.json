@@ -1,0 +1,48 @@
+{
+  "prompts": [
+    {
+      "id": "5defde1aebad9c9c67507ebb145c92df",
+      "title": "LifeOS",
+      "description": "Run LifeOS for work, devices and life. Say what you want; facts come from your EntityOS.",
+      "content": "# LifeOS\n\nRun /lifeos and do the task below.\n\n* **Task:** `{{task}}`\n* **Module:** `{{module}}`\n* **Details:** `{{details}}`\n\nRules: ask once for anything missing, read owner facts from EntityOS, and show a plan and wait for a yes before anything that creates, changes, sends, publishes or deletes.",
+      "variables": {
+        "task": {
+          "type": "Textarea",
+          "label": "Task",
+          "placeholder": "Plan my week, log today, check my backup",
+          "context": "What you want LifeOS to do.",
+          "maxLength": 3000,
+          "required": true,
+          "options": ""
+        },
+        "module": {
+          "type": "Radio",
+          "label": "Module",
+          "placeholder": "module",
+          "context": "Pick one, or Auto to let LifeOS route.",
+          "maxLength": "",
+          "required": false,
+          "options": "Auto\nWork\nPersonal\nDevices\nMoney\nKnowledge\nFeed"
+        },
+        "details": {
+          "type": "Textarea",
+          "label": "Details",
+          "placeholder": "Dates, files, links",
+          "context": "Anything else LifeOS should know.",
+          "maxLength": 3000,
+          "required": false,
+          "options": ""
+        }
+      },
+      "lastModified": "2026-11-04T15:19:35.828Z",
+      "created": "2026-11-04T15:19:35.828Z"
+    }
+  ],
+  "metadata": {
+    "exportDate": "2026-11-04T15:19:35.828Z",
+    "version": "2.0",
+    "format": "prompt-builder-plain",
+    "count": 1,
+    "checksum": "-9vapbe"
+  }
+}
