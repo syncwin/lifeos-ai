@@ -1,0 +1,10 @@
+{
+  "note": "Source of truth for shared references. Edit files here, then run scripts/sync_shared.py. Value is a list of skill folder names under skills/, or [\"*\"] for every skill.",
+  "files": {
+    "rules.md": ["*"],
+    "scratchpad.md": ["*"],
+    "risk-check.md": ["lifeos", "lifeos-deviceos", "deviceos-backup", "deviceos-files", "lifeos-moneyos", "selfos-reminders", "workos-intake", "lifeos-workos"],
+    "entityos-offline.md": ["lifeos", "lifeos-entityos"],
+    "tracker.md": ["lifeos", "lifeos-feed", "lifeos-knowledgeos", "lifeos-workos", "lifeos-selfos", "selfos-tasks", "selfos-reminders", "selfos-routines", "workos-intake", "workos-sprint", "workos-log", "workos-report", "workos-results"]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "skill_name": "deviceos-backup",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "deviceos-backup",
+      "prompt": "Is my PC backup healthy?",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-backup (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "deviceos-backup",
+      "prompt": "When was the last backup, and is my data safe?",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-backup (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "deviceos-backup",
+      "prompt": "Back up my Python project to GitHub with git push",
+      "should_trigger": false,
+      "expected_output": "Does not load deviceos-backup; answers normally or points to another tool."
+    }
+  ]
+}

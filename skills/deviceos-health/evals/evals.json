@@ -1,0 +1,26 @@
+{
+  "skill_name": "deviceos-health",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "deviceos-health",
+      "prompt": "Why is my PC slow?",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-health (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "deviceos-health",
+      "prompt": "How much disk space is left?",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-health (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "deviceos-health",
+      "prompt": "Which laptop should I buy?",
+      "should_trigger": false,
+      "expected_output": "Does not load deviceos-health; answers normally or points to another tool."
+    }
+  ]
+}

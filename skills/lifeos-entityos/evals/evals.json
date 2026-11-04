@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-entityos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-entityos",
+      "prompt": "Which brands do I run?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entityos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-entityos",
+      "prompt": "Where does this value belong, my Wi-Fi name or my timezone?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entityos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-entityos",
+      "prompt": "What is the capital of France?",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-entityos; answers normally or points to another tool."
+    }
+  ]
+}

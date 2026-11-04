@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-intake",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-intake",
+      "prompt": "A manager sent me a new request, add it to my plan",
+      "should_trigger": true,
+      "expected_output": "Loads workos-intake (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-intake",
+      "prompt": "Is this request a duplicate of something I already have?",
+      "should_trigger": true,
+      "expected_output": "Loads workos-intake (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-intake",
+      "prompt": "Reply to this customer email for me",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-intake; answers normally or points to another tool."
+    }
+  ]
+}

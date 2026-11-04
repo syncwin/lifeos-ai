@@ -1,0 +1,50 @@
+{
+  "name": "lifeos",
+  "displayName": "LifeOS",
+  "version": "0.2.0",
+  "description": "LifeOS: a personal operating system for work, devices and life. Router, daily feed, module skills, a verifier and guard hooks; every owner fact comes from EntityOS.",
+  "author": {
+    "name": "@wasimness",
+    "company": "SyncWin",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "homepage": "https://syncwin.com",
+  "repository": "https://github.com/syncwin/lifeos-ai",
+  "license": "MIT",
+  "keywords": [
+    "lifeos",
+    "entityos",
+    "productivity",
+    "tasks",
+    "workflow",
+    "feed"
+  ],
+  "documentationUrl": "https://github.com/syncwin/lifeos-ai#readme",
+  "supportUrl": "https://github.com/syncwin/lifeos-ai/issues",
+  "privacyPolicyUrl": "https://syncwin.com/privacy-policy/",
+  "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
+  "userConfig": {
+    "entityos_url": {
+      "type": "string",
+      "title": "EntityOS MCP URL",
+      "description": "URL of your own EntityOS MCP endpoint."
+    },
+    "entityos_token": {
+      "type": "string",
+      "title": "EntityOS access token",
+      "description": "Token for your EntityOS MCP endpoint. Stored in secure storage.",
+      "sensitive": true
+    }
+  },
+  "metadata": {
+    "displayName": "LifeOS",
+    "version": "0.2.0",
+    "releaseStage": "alpha",
+    "author": "@wasimness",
+    "company": "SyncWin",
+    "homepage": "https://syncwin.com",
+    "repository": "https://github.com/syncwin/lifeos-ai",
+    "license": "MIT"
+  }
+}

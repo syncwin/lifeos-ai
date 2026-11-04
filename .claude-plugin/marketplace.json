@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "syncwin-lifeos",
+  "description": "Claude plugins from SyncWin for running your own life and work from one place.",
+  "owner": {
+    "name": "SyncWin",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "plugins": [
+    {
+      "name": "lifeos",
+      "displayName": "LifeOS",
+      "source": "./",
+      "description": "Router, daily feed, module skills, verifier agent and guard hooks. Owner facts come from your own EntityOS.",
+      "author": {
+        "name": "@wasimness",
+        "email": "support@syncwin.com",
+        "url": "https://syncwin.com"
+      },
+      "homepage": "https://syncwin.com",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "lifeos",
+        "entityos",
+        "productivity",
+        "tasks"
+      ]
+    }
+  ]
+}

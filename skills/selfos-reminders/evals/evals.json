@@ -1,0 +1,26 @@
+{
+  "skill_name": "selfos-reminders",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "selfos-reminders",
+      "prompt": "Remind me to renew my passport next month",
+      "should_trigger": true,
+      "expected_output": "Loads selfos-reminders (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "selfos-reminders",
+      "prompt": "Snooze the dentist reminder until Friday",
+      "should_trigger": true,
+      "expected_output": "Loads selfos-reminders (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "selfos-reminders",
+      "prompt": "What is the weather tomorrow?",
+      "should_trigger": false,
+      "expected_output": "Does not load selfos-reminders; answers normally or points to another tool."
+    }
+  ]
+}

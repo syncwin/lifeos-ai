@@ -1,0 +1,26 @@
+{
+  "skill_name": "selfos-routines",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "selfos-routines",
+      "prompt": "Add a step to my morning routine: stretch for five minutes",
+      "should_trigger": true,
+      "expected_output": "Loads selfos-routines (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "selfos-routines",
+      "prompt": "Show my weekly review checklist",
+      "should_trigger": true,
+      "expected_output": "Loads selfos-routines (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "selfos-routines",
+      "prompt": "Plan a three-day trip to Rome",
+      "should_trigger": false,
+      "expected_output": "Does not load selfos-routines; answers normally or points to another tool."
+    }
+  ]
+}

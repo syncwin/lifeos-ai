@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-report",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-report",
+      "prompt": "Write my end of day report",
+      "should_trigger": true,
+      "expected_output": "Loads workos-report (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-report",
+      "prompt": "Start my day with a morning plan",
+      "should_trigger": true,
+      "expected_output": "Loads workos-report (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-report",
+      "prompt": "Write a quarterly financial report for investors",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-report; answers normally or points to another tool."
+    }
+  ]
+}

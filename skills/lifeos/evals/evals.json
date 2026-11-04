@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos",
+      "prompt": "What should I focus on today?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos",
+      "prompt": "Remind me to renew my passport next month",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos",
+      "prompt": "Write a Python function that reverses a string",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos; answers normally or points to another tool."
+    }
+  ]
+}

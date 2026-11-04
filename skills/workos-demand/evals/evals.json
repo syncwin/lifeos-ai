@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-demand",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-demand",
+      "prompt": "Should this keyword cluster become a page?",
+      "should_trigger": true,
+      "expected_output": "Loads workos-demand (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-demand",
+      "prompt": "Plan content for these multi-constraint search queries",
+      "should_trigger": true,
+      "expected_output": "Loads workos-demand (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-demand",
+      "prompt": "Write a blog post about gardening",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-demand; answers normally or points to another tool."
+    }
+  ]
+}

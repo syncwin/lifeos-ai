@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-selfos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-selfos",
+      "prompt": "What is on my plate this week?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-selfos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-selfos",
+      "prompt": "Find my insurance document",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-selfos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-selfos",
+      "prompt": "Write a bedtime story for my kids",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-selfos; answers normally or points to another tool."
+    }
+  ]
+}
