@@ -1,6 +1,6 @@
 ---
 name: lifeos
-description: "Entry point and router for LifeOS, the personal operating system. Use for /lifeos and for any request about the user's own work, tasks, reminders, routines, devices, backups, money, saves, daily feed or facts about themselves, such as \"plan my week\", \"log what I did today\", \"remind me to renew my passport\", \"is my PC backup healthy\", \"what did I save about X\", \"show my feed\". Detects the module, checks it is enabled, then sends the work to the right skill. Not for generic coding, WordPress or questions that need no personal data."
+description: "Entry point and router for LifeOS, the personal operating system. Load first whenever the user types /lifeos, asks what to focus on or do today, asks to change or customise LifeOS or its skills, or makes any request about the user's own work, tasks, reminders, routines, devices, backups, money, saves, daily feed or facts about themselves, such as \"plan my week\", \"log what I did today\", \"remind me to renew my passport\", \"is my PC backup healthy\", \"what did I save about X\", \"show my feed\". Detects the module, checks it is enabled, then sends the work to the right skill. Not for generic coding, WordPress or questions that need no personal data."
 license: MIT
 metadata:
   displayName: "LifeOS"
@@ -27,6 +27,7 @@ Classify the request, then load exactly one skill. Several modules means run the
 | "Is this done / check this" on any deliverable | agent `lifeos-verifier` |
 
 ## 2. Gate
+0. Asked to edit or customise LifeOS skills: refuse in-session (core change control in `references/rules.md`), offer a one or two sentence feedback note, and point to EntityOS for personal preferences such as voice.
 1. Module switch: ask the LifeOS module list when connected (a disabled module is declined and named, never deleted); otherwise ask once.
 2. Stage prerequisites: `search_context("stage prerequisites, freshness limits")`. A stale upstream stage is listed as a proposed task, not run.
 3. Diagnose the cause before auditing or fixing.

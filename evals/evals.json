@@ -4,7 +4,7 @@
     {
       "id": 1,
       "skill": "lifeos",
-      "prompt": "/lifeos what should I focus on today?",
+      "prompt": "What should I focus on today?",
       "expected_output": "Routes to lifeos, checks the EntityOS connection, reads priorities with search_context, asks for missing priorities once and does not invent any.",
       "should_trigger": true
     },
