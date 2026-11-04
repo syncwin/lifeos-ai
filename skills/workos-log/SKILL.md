@@ -1,22 +1,30 @@
 ---
 name: workos-log
-description: "Audit trail of work for LifeOS WorkOS. Use for \"log this\", \"record what I did\", \"note the decision\", \"add to the question queue\", after any chat that changed files or records."
+description: "Audit trail of work for LifeOS WorkOS. Use when the user says \"log this\", \"log what I did today\", \"record what I did\", \"note the decision\", \"add to the question queue\", or after any chat that changed files or records."
 license: MIT
 metadata:
   displayName: "WorkOS Log"
-  version: "0.1.0"
+  version: "0.2.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # WorkOS Log
-Needs: task store (`lifeos/references/tracker.md`); EntityOS MCP for tag vocabulary.
+Needs: task store (`references/tracker.md`); EntityOS MCP for tag vocabulary.
+Start: run the `lifeos` router first if it hasn't run in this chat.
 
 1. Log as you go: one row per unit of work with what, evidence (path, link, command output), tag, status.
 2. Decisions, questions and flags go to their own tables, not into free text.
-3. Writes follow the task store rules in `lifeos/references/rules.md`. Store down: write an export file in the project folder and say so.
+3. Writes follow `references/rules.md` (Task store).
 4. Tags and statuses: `search_context("log tags and statuses")`.
 
-Next: `workos-report` at day end.
+## Done check
+Graded by `agents/lifeos-verifier.md` together with the common lines in `references/rules.md` (Done check, all stages).
+- Each row has what, evidence (path, link or command output), tag and status.
+- Decisions, questions and flags are in their own tables.
 
-Scratchpad: end per `lifeos/references/scratchpad.md`.
+## Handoff
+Delivered: Logged rows with evidence; open questions queued.
+Next: end of day -> `workos-report`.
+
+Scratchpad: end per `references/scratchpad.md`.

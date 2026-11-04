@@ -4,13 +4,14 @@ description: "Starter and router for the WorkOS module, work, clients, projects,
 license: MIT
 metadata:
   displayName: "LifeOS WorkOS"
-  version: "0.1.0"
+  version: "0.2.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # LifeOS WorkOS
-Needs: EntityOS MCP; module `workos` enabled; task store (`lifeos/references/tracker.md`).
+Needs: EntityOS MCP; module `workos` enabled; task store (`references/tracker.md`).
+Start: run the `lifeos` router first if it hasn't run in this chat.
 
 | Request | Stage |
 |---|---|
@@ -24,6 +25,13 @@ Needs: EntityOS MCP; module `workos` enabled; task store (`lifeos/references/tra
 
 Stage order when several apply: intake, sprint, log, report, results. Stages inherit the shared rules; a stage with a stale upstream input lists it as a task and does not run it.
 
-Next: the chosen stage, then `lifeos-verifier`.
+## Done check
+Graded by `agents/lifeos-verifier.md` together with the common lines in `references/rules.md` (Done check, all stages).
+- The request went to the stage in the table; stale upstream stages are listed as proposed tasks, not run.
+- Stage order followed: intake, sprint, log, report, results.
 
-Scratchpad: end per `lifeos/references/scratchpad.md`.
+## Handoff
+Delivered: The chosen stage's result, then a verifier pass.
+Next: check a finished deliverable -> `lifeos-verifier`.
+
+Scratchpad: end per `references/scratchpad.md`.

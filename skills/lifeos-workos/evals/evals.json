@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-workos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-workos",
+      "prompt": "Start my day",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-workos",
+      "prompt": "Check this draft for my client",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-workos",
+      "prompt": "Fix the failing unit test in my repo",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-workos; answers normally or points to another tool."
+    }
+  ]
+}

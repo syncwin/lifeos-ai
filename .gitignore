@@ -1,6 +1,7 @@
-results/
+/results/
 node_modules/
 .DS_Store
 *.zip
 __pycache__/
-evals/results/
+evals/results/*
+!evals/results/*-0.*/

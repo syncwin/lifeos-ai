@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-log",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-log",
+      "prompt": "Log what I did today",
+      "should_trigger": true,
+      "expected_output": "Loads workos-log (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-log",
+      "prompt": "Note the decision: we keep the old pricing page",
+      "should_trigger": true,
+      "expected_output": "Loads workos-log (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-log",
+      "prompt": "Print the git log of this repo",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-log; answers normally or points to another tool."
+    }
+  ]
+}

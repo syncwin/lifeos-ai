@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-knowledgeos",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-knowledgeos",
+      "prompt": "Save this link and tell me what I saved about Flutter before",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-knowledgeos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-knowledgeos",
+      "prompt": "Find my notes on kitchen renovation",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-knowledgeos (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-knowledgeos",
+      "prompt": "Explain how Flutter state management works",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-knowledgeos; answers normally or points to another tool."
+    }
+  ]
+}

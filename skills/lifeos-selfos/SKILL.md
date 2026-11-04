@@ -4,13 +4,14 @@ description: "Starter skill for the SelfOS module, personal life. Use for \"add 
 license: MIT
 metadata:
   displayName: "LifeOS SelfOS"
-  version: "0.1.0"
+  version: "0.2.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # LifeOS SelfOS
 Needs: EntityOS MCP; module `selfos` enabled.
+Start: run the `lifeos` router first if it hasn't run in this chat.
 
 | Request | Stage |
 |---|---|
@@ -21,6 +22,13 @@ Needs: EntityOS MCP; module `selfos` enabled.
 
 Personal preferences (timezone, quiet hours, routine times): `search_context("personal schedule preferences")`.
 
-Next: the chosen stage.
+## Done check
+Graded by `agents/lifeos-verifier.md` together with the common lines in `references/rules.md` (Done check, all stages).
+- The request went to exactly one stage (tasks, reminders or routines) or a document path was reported.
+- No document was opened or moved.
 
-Scratchpad: end per `lifeos/references/scratchpad.md`.
+## Handoff
+Delivered: The chosen stage's result.
+Next: tasks -> `selfos-tasks`; reminders -> `selfos-reminders`; routines -> `selfos-routines`.
+
+Scratchpad: end per `references/scratchpad.md`.

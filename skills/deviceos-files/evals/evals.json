@@ -1,0 +1,26 @@
+{
+  "skill_name": "deviceos-files",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "deviceos-files",
+      "prompt": "Find my file named tax-2025.pdf",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-files (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "deviceos-files",
+      "prompt": "Organise my downloads folder",
+      "should_trigger": true,
+      "expected_output": "Loads deviceos-files (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "deviceos-files",
+      "prompt": "Create a new React component for a navbar",
+      "should_trigger": false,
+      "expected_output": "Does not load deviceos-files; answers normally or points to another tool."
+    }
+  ]
+}

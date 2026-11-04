@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-feed",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-feed",
+      "prompt": "Show me my daily feed",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-feed (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-feed",
+      "prompt": "Tune my feed: not for me, no more crypto cards",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-feed (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-feed",
+      "prompt": "Summarise the history of the Roman Empire",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-feed; answers normally or points to another tool."
+    }
+  ]
+}

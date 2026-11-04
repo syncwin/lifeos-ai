@@ -7,7 +7,26 @@
           {
             "type": "command",
             "command": "python",
-            "args": ["-I", "${CLAUDE_PLUGIN_ROOT}/scripts/scope_guard.py", "${CLAUDE_PLUGIN_DATA}/scope.json"],
+            "args": [
+              "-I",
+              "${CLAUDE_PLUGIN_ROOT}/scripts/scope_guard.py",
+              "${CLAUDE_PLUGIN_DATA}/scope.json"
+            ],
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*entityos.*(write|update|create|delete|put).*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": [
+              "-I",
+              "-c",
+              "import json;print(json.dumps({\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"LifeOS: this writes to EntityOS. Confirm what is stored or changed (see risk-check).\"}}))"
+            ],
             "timeout": 10
           }
         ]
@@ -20,7 +39,11 @@
           {
             "type": "command",
             "command": "python",
-            "args": ["-I", "${CLAUDE_PLUGIN_ROOT}/scripts/data_guard.py", "${CLAUDE_PLUGIN_ROOT}/scripts/screen_text.py"],
+            "args": [
+              "-I",
+              "${CLAUDE_PLUGIN_ROOT}/scripts/data_guard.py",
+              "${CLAUDE_PLUGIN_ROOT}/scripts/screen_text.py"
+            ],
             "timeout": 10
           }
         ]
@@ -32,7 +55,10 @@
           {
             "type": "command",
             "command": "python",
-            "args": ["-I", "${CLAUDE_PLUGIN_ROOT}/scripts/log_guard.py"],
+            "args": [
+              "-I",
+              "${CLAUDE_PLUGIN_ROOT}/scripts/log_guard.py"
+            ],
             "timeout": 10
           }
         ]

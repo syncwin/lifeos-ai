@@ -4,13 +4,13 @@ description: "Entry point and router for LifeOS, the personal operating system. 
 license: MIT
 metadata:
   displayName: "LifeOS"
-  version: "0.1.0"
+  version: "0.2.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # LifeOS (router)
-Needs: EntityOS MCP connected (`search_context`, `get_entity`, `list_entities`). If it is not, stop and tell the user to set the EntityOS URL and token under plugin options.
+Needs: EntityOS MCP connected (`search_context`, `get_entity`, `list_entities`). Missing, or the cheapest call (`search_context("priorities")`) fails twice: follow `references/entityos-offline.md`; do not stop.
 
 ## 1. Route
 Classify the request, then load exactly one skill. Several modules means run them in the order listed, one at a time.
@@ -25,6 +25,10 @@ Classify the request, then load exactly one skill. Several modules means run the
 | Expenses, receipts, bills, subscriptions, budgets | `lifeos-moneyos` |
 | Saves, links, notes, search, learning | `lifeos-knowledgeos` |
 | "Is this done / check this" on any deliverable | agent `lifeos-verifier` |
+| "Where does this value belong", where a fact or setting is stored | `lifeos-entityos` |
+| Out of scope: writing or fixing code | `/fsdevops` |
+| Out of scope: WordPress themes, plugins, sites | `/fswpdevops` |
+| Out of scope: operating an app's own UI (clicking, publishing in Nowa and similar) | `/appops` |
 
 ## 2. Gate
 0. Asked to edit or customise LifeOS skills: refuse in-session (core change control in `references/rules.md`), offer a one or two sentence feedback note, and point to EntityOS for personal preferences such as voice.
@@ -33,6 +37,6 @@ Classify the request, then load exactly one skill. Several modules means run the
 3. Diagnose the cause before auditing or fixing.
 4. Never answer stage work yourself; load the stage skill.
 
-Shared rules (owner facts, approvals, evidence labels, change control): `references/rules.md`. Task store spec: `references/tracker.md`.
+Shared rules (owner facts, approvals, evidence labels, change control): `references/rules.md`. Risky actions: `references/risk-check.md`. Task store spec: `references/tracker.md`.
 
 Scratchpad: end per `references/scratchpad.md`. Next: the chosen skill, then `lifeos-verifier` before calling a deliverable done.

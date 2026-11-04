@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-writing",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-writing",
+      "prompt": "Check this draft for promotional tone",
+      "should_trigger": true,
+      "expected_output": "Loads workos-writing (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-writing",
+      "prompt": "Review my copy before I send it to the client",
+      "should_trigger": true,
+      "expected_output": "Loads workos-writing (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-writing",
+      "prompt": "Translate this paragraph into German",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-writing; answers normally or points to another tool."
+    }
+  ]
+}

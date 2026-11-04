@@ -1,0 +1,26 @@
+{
+  "skill_name": "workos-results",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "workos-results",
+      "prompt": "Did that change work? Check the 28 day reading",
+      "should_trigger": true,
+      "expected_output": "Loads workos-results (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "workos-results",
+      "prompt": "Capture a baseline before the page goes live",
+      "should_trigger": true,
+      "expected_output": "Loads workos-results (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "workos-results",
+      "prompt": "Run the performance benchmark in my code",
+      "should_trigger": false,
+      "expected_output": "Does not load workos-results; answers normally or points to another tool."
+    }
+  ]
+}
