@@ -4,7 +4,7 @@ description: "Results loop for LifeOS WorkOS, learning which work paid. Use when
 license: MIT
 metadata:
   displayName: "WorkOS Results"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

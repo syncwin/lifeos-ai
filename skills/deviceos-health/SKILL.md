@@ -4,7 +4,7 @@ description: "Reads PC and phone health for LifeOS DeviceOS. Use when the user a
 license: MIT
 metadata:
   displayName: "DeviceOS Health"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

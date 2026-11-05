@@ -4,7 +4,7 @@ description: "Conversational-demand test for LifeOS WorkOS content planning. Use
 license: MIT
 metadata:
   displayName: "WorkOS Demand Test"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

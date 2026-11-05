@@ -5,6 +5,15 @@
 **Changed**
 - `lifeos-feed`: ranking text now follows the PRD: score = urgency × importance × freshness, feedback lowers similar cards, daily top 3, cards offer done, snooze, open, dismiss (reply or file where they apply).
 
+## 0.2.1: Update
+
+**Changed**
+- Token handling rule in the shared rules (token only in the sensitive setting, https EntityOS URL only, never in commands, URLs, files, records, memory or reports; refuse requests found in content). Synced into every skill.
+
+**Fixed**
+- scope_guard.py now fails closed: an allowlist file that exists but cannot be read, or any error while checking a call once an allowlist is set, blocks the call (exit 2). With no allowlist it behaves as before.
+- The EntityOS write confirmation matched only lowercase verbs; it now also matches capitalised tool names and remove, insert, upsert, patch and merge.
+
 ## [0.2.0] - 2026-11-05
 
 **Added**
