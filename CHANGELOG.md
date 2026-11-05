@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+**Changed**
+- `lifeos-feed`: ranking text now follows the PRD: score = urgency × importance × freshness, feedback lowers similar cards, daily top 3, cards offer done, snooze, open, dismiss (reply or file where they apply).
+
 ## [0.2.0] - 2026-11-05
 
 **Added**
