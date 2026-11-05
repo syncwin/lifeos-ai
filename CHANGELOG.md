@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.2] - 2026-11-05
+### Fixed
+- Stop log guard only fires in sessions that used LifeOS, at most once per session.
+
 ## [Unreleased]
 
 **Fixed**
