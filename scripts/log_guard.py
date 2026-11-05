@@ -1,6 +1,8 @@
 """Stop log guard: if files or records changed after the last log row, ask once to log.
 
 Log tool name pattern: first argument (regex; default matches tool names with log_entry or lifeos..log).
+Only fires in sessions that used LifeOS (a lifeos/entityos tool or skill), at most once per
+session (state file in the first non-flag argument's folder or CLAUDE_PLUGIN_DATA).
 Never blocks twice in a row (stop_hook_active) and never blocks on bad input.
 """
 import json
@@ -23,7 +25,7 @@ def tool_uses(path):
                 continue
             for block in content:
                 if isinstance(block, dict) and block.get("type") == "tool_use":
-                    yield str(block.get("name", ""))
+                    yield str(block.get("name", "")), json.dumps(block.get("input") or {})
 
 
 def main():
@@ -35,16 +37,30 @@ def main():
         if not path or not os.path.isfile(path):
             return 0
         pattern = re.compile((sys.argv[1] if len(sys.argv) > 1 else r"log_?entr|lifeos.*log"), re.I)
+        lifeos = re.compile(r"lifeos|entityos", re.I)
+        used = False
         last_change = last_log = -1
-        for i, name in enumerate(tool_uses(path)):
+        for i, (name, args) in enumerate(tool_uses(path)):
+            if lifeos.search(name) or (name == "Skill" and lifeos.search(args)):
+                used = True
             if pattern.search(name):
                 last_log = i
             elif name in CHANGE_TOOLS:
                 last_change = i
-        if last_change > last_log:
-            print(json.dumps({
+        if not used or last_change <= last_log:
+            return 0
+        data = os.environ.get("CLAUDE_PLUGIN_DATA") or os.path.dirname(path)
+        state = os.path.join(data, "log_guard_seen.txt")
+        sid = str(event.get("session_id") or path)
+        seen = open(state, encoding="utf-8").read().split() if os.path.isfile(state) else []
+        if sid in seen:
+            return 0
+        os.makedirs(data, exist_ok=True)
+        with open(state, "a", encoding="utf-8") as f:
+            f.write(sid + "\n")
+        print(json.dumps({
                 "decision": "block",
-                "reason": "Files changed after the last log row. Log the work once (what, evidence, status), then end with the request ledger.",
+                "reason": "Files changed after the last log row. LifeOS: log the work once (what, evidence, status) with the log tool if connected, else in the end-of-day report; then end with the request ledger.",
             }))
     except Exception:
         return 0
