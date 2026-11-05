@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+**Fixed**
+- EntityOS write-confirmation hook matcher now anchors the write verbs to the start of the tool-name segment after `__`, so read tools such as `get_input_schema`, `list_output` or `compute_stats` no longer prompt.
+
 **Changed**
 - `lifeos-feed`: ranking text now follows the PRD: score = urgency × importance × freshness, feedback lowers similar cards, daily top 3, cards offer done, snooze, open, dismiss (reply or file where they apply).
 
