@@ -17,7 +17,7 @@
         ]
       },
       {
-        "matcher": "mcp__.*entityos.*(write|update|create|delete|put).*",
+        "matcher": "^mcp__.*entityos.*__([Ww]rite|[Uu]pdate|[Cc]reate|[Dd]elete|[Pp]ut|[Rr]emove|[Ii]nsert|[Uu]psert|[Pp]atch|[Mm]erge).*$",
         "hooks": [
           {
             "type": "command",

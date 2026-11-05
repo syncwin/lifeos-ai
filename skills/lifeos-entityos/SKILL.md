@@ -4,7 +4,7 @@ description: "Answers and maintains facts about the owner, brands, people and so
 license: MIT
 metadata:
   displayName: "LifeOS EntityOS"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

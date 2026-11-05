@@ -4,7 +4,7 @@ description: "Checks drafts against a numbered writing-patterns glossary for Lif
 license: MIT
 metadata:
   displayName: "WorkOS Writing Check"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

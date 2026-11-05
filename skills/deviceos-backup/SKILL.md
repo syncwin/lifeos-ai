@@ -4,7 +4,7 @@ description: "Checks whether backups ran and are healthy, for LifeOS DeviceOS. U
 license: MIT
 metadata:
   displayName: "DeviceOS Backup"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

@@ -4,7 +4,7 @@ description: "Audit trail of work for LifeOS WorkOS. Use when the user says \"lo
 license: MIT
 metadata:
   displayName: "WorkOS Log"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

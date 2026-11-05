@@ -2,7 +2,8 @@
 
 Allowlist file (never shipped, filled from EntityOS "owned repos and resources"):
   first argument (hooks.json passes ${CLAUDE_PLUGIN_DATA}/scope.json) -> {"repos": ["owner/repo", "owner/*"]}
-No file or empty list: allow, except `git push` to main/master asks first. Unreadable input: allow. Out of scope: exit 2 with one line.
+No file or empty list: allow, except `git push` to main/master asks first. Out of scope: exit 2 with one line.
+This is a guard, so it fails closed: an allowlist file that exists but cannot be read, or any error while checking a call once an allowlist is set, exits 2.
 """
 import fnmatch
 import json
@@ -20,7 +21,7 @@ def load_repos():
                     repos = json.load(f).get("repos", [])
                 return [r.lower() for r in repos if isinstance(r, str)]
             except (OSError, ValueError, AttributeError):
-                return []
+                raise RuntimeError("scope allowlist unreadable")
     return []
 
 
@@ -45,10 +46,14 @@ def targets(name, tool_input):
 
 def main():
     try:
+        repos = load_repos()
+    except Exception:  # an allowlist exists but is unreadable: fail closed
+        print("LifeOS scope guard: scope allowlist unreadable; blocked.", file=sys.stderr)
+        return 2
+    try:
         event = json.load(sys.stdin)
         name = str(event.get("tool_name", ""))
         tool_input = event.get("tool_input") or {}
-        repos = load_repos()
         if not repos:
             cmd = str(tool_input.get("command", "")) if name == "Bash" else ""
             if re.search(r"\bgit\s+push\b.*\b(main|master)\b", cmd):
@@ -63,7 +68,9 @@ def main():
                 print(f"LifeOS scope guard: {t} is not on the scope allowlist.", file=sys.stderr)
                 return 2
     except Exception:
-        return 0
+        if repos:  # an allowlist is set, so an error while checking must not let the call through
+            print("LifeOS scope guard: error while checking this call; blocked.", file=sys.stderr)
+            return 2
     return 0
 
 

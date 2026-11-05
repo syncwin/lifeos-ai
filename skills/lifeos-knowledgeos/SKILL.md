@@ -4,7 +4,7 @@ description: "Starter skill for the KnowledgeOS module, saves and learning. Use 
 license: MIT
 metadata:
   displayName: "LifeOS KnowledgeOS"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

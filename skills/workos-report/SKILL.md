@@ -4,7 +4,7 @@ description: "Day start and day end reports for LifeOS WorkOS. Use when the user
 license: MIT
 metadata:
   displayName: "WorkOS Reports"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
