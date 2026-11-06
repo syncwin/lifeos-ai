@@ -1,16 +1,23 @@
-"""Stop log guard: if files or records changed after the last log row, ask once to log.
+"""Stop log guard: if files changed after the last log row, ask once to log.
 
-Log tool name pattern: first argument (regex; default matches tool names with log_entry or lifeos..log).
-Only fires in sessions that used LifeOS (a lifeos/entityos tool or skill), at most once per
-session (state file in the first non-flag argument's folder or CLAUDE_PLUGIN_DATA).
-Never blocks twice in a row (stop_hook_active) and never blocks on bad input.
+Runs only in LifeOS sessions (a lifeos/entityos tool or a LifeOS skill was used in the transcript).
+Blocks at most once per session (marker file keyed by session_id in the temp dir).
+Log tools: first argument (regex; default log_entry / lifeos..log) plus mcp__memory__save_progress.
+If no log tool is visible in the transcript, warns once and does not block.
+Fails open on every error.
 """
+import hashlib
 import json
 import os
 import re
 import sys
+import tempfile
 
 CHANGE_TOOLS = {"Write", "Edit", "MultiEdit", "NotebookEdit"}
+DEFAULT_LOG = r"log_?entr|lifeos.*log"
+MEMORY_LOG = r"^mcp__memory__save_progress$"
+LIFEOS_TOOL = re.compile(r"lifeos|entityos", re.I)
+LIFEOS_SKILL = re.compile(r"^(lifeos[:\-]|lifeos$|(workos|selfos|deviceos|moneyos)-)", re.I)
 
 
 def tool_uses(path):
@@ -25,7 +32,26 @@ def tool_uses(path):
                 continue
             for block in content:
                 if isinstance(block, dict) and block.get("type") == "tool_use":
-                    yield str(block.get("name", "")), json.dumps(block.get("input") or {})
+                    yield str(block.get("name", "")), block.get("input") or {}
+
+
+def is_lifeos(name, args):
+    if name == "Skill":
+        skill = args.get("skill") if isinstance(args, dict) else ""
+        return bool(LIFEOS_SKILL.search(str(skill or "")))
+    return name.startswith("mcp__") and bool(LIFEOS_TOOL.search(name))
+
+
+def first_time(session_id):
+    """True the first time this session is seen (atomic marker file); fail open elsewhere."""
+    d = os.path.join(tempfile.gettempdir(), "lifeos-log-guard")
+    os.makedirs(d, exist_ok=True)
+    marker = os.path.join(d, hashlib.sha256(session_id.encode("utf-8", "replace")).hexdigest()[:32])
+    try:
+        os.close(os.open(marker, os.O_CREAT | os.O_EXCL | os.O_WRONLY))
+        return True
+    except FileExistsError:
+        return False
 
 
 def main():
@@ -36,12 +62,11 @@ def main():
         path = event.get("transcript_path")
         if not path or not os.path.isfile(path):
             return 0
-        pattern = re.compile((sys.argv[1] if len(sys.argv) > 1 else r"log_?entr|lifeos.*log"), re.I)
-        lifeos = re.compile(r"lifeos|entityos", re.I)
+        pattern = re.compile((sys.argv[1] if len(sys.argv) > 1 else DEFAULT_LOG) + "|" + MEMORY_LOG, re.I)
         used = False
         last_change = last_log = -1
         for i, (name, args) in enumerate(tool_uses(path)):
-            if lifeos.search(name) or (name == "Skill" and lifeos.search(args)):
+            if is_lifeos(name, args):
                 used = True
             if pattern.search(name):
                 last_log = i
@@ -49,19 +74,20 @@ def main():
                 last_change = i
         if not used or last_change <= last_log:
             return 0
-        data = os.environ.get("CLAUDE_PLUGIN_DATA") or os.path.dirname(path)
-        state = os.path.join(data, "log_guard_seen.txt")
         sid = str(event.get("session_id") or path)
-        seen = open(state, encoding="utf-8").read().split() if os.path.isfile(state) else []
-        if sid in seen:
+        if not first_time(sid):
             return 0
-        os.makedirs(data, exist_ok=True)
-        with open(state, "a", encoding="utf-8") as f:
-            f.write(sid + "\n")
+        with open(path, encoding="utf-8", errors="replace") as f:
+            raw = f.read()
+        # A log tool is "available" if its name appears anywhere in the transcript (tool list or earlier call).
+        available = re.search(r"mcp__[A-Za-z0-9_\-]*(" + pattern.pattern + ")", raw, re.I) or "mcp__memory__save_progress" in raw
+        if not available:
+            print(json.dumps({"systemMessage": "LifeOS: files changed but no log tool is connected; note the work in the end-of-day report."}))
+            return 0
         print(json.dumps({
-                "decision": "block",
-                "reason": "Files changed after the last log row. LifeOS: log the work once (what, evidence, status) with the log tool if connected, else in the end-of-day report; then end with the request ledger.",
-            }))
+            "decision": "block",
+            "reason": "Files changed after the last log row. LifeOS: log the work once (what, evidence, status) with the log tool (or mcp__memory__save_progress), then end with the request ledger.",
+        }))
     except Exception:
         return 0
     return 0
