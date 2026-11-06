@@ -4,7 +4,7 @@ description: "Personal task capture and review for LifeOS. Use when the user say
 license: MIT
 metadata:
   displayName: "SelfOS Tasks"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

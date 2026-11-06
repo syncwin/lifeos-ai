@@ -4,7 +4,7 @@ description: "Starter and router for the DeviceOS module, PC and phone health, b
 license: MIT
 metadata:
   displayName: "LifeOS DeviceOS"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

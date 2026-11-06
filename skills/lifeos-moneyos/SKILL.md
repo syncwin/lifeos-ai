@@ -4,7 +4,7 @@ description: "Starter skill for the MoneyOS module, money records. Use when the 
 license: MIT
 metadata:
   displayName: "LifeOS MoneyOS"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

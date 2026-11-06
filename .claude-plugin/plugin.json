@@ -1,7 +1,7 @@
 {
   "name": "lifeos",
   "displayName": "LifeOS",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "LifeOS: a personal operating system for work, devices and life. Router, daily feed, module skills, a verifier and guard hooks; every owner fact comes from EntityOS.",
   "author": {
     "name": "@wasimness",
@@ -39,7 +39,7 @@
   },
   "metadata": {
     "displayName": "LifeOS",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

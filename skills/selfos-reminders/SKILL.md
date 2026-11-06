@@ -4,7 +4,7 @@ description: "Time- and event-based reminders for LifeOS SelfOS. Use when the us
 license: MIT
 metadata:
   displayName: "SelfOS Reminders"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

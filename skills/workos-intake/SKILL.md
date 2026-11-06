@@ -4,7 +4,7 @@ description: "Absorbs outside requests for LifeOS WorkOS from managers, colleagu
 license: MIT
 metadata:
   displayName: "WorkOS Intake"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---
