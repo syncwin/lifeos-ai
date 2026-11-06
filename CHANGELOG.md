@@ -6,6 +6,9 @@
 
 ## [Unreleased]
 
+**Added**
+- GitHub Actions workflow `release-plugin.yml` builds `lifeos.plugin` and attaches it to each release for a one-click download link (README).
+
 **Fixed**
 - EntityOS write-confirmation hook matcher now anchors the write verbs to the start of the tool-name segment after `__`, so read tools such as `get_input_schema`, `list_output` or `compute_stats` no longer prompt.
 

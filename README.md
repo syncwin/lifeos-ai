@@ -2,6 +2,8 @@
 
 LifeOS is a Claude plugin for running your own work, devices and life from one place. It has a router (`/lifeos`), a daily feed, a starter skill for each module (EntityOS, SelfOS, WorkOS, DeviceOS, MoneyOS, KnowledgeOS), a verifier agent and guard hooks.
 
+**Download:** [lifeos.plugin](https://github.com/syncwin/lifeos-ai/releases/latest/download/lifeos.plugin) (always the latest release)
+
 **No personal data ships with it.** Every owner fact (priorities, brands, voice, allowed repos) is read at run time from your own EntityOS MCP endpoint.
 
 ## Install
