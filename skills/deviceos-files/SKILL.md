@@ -4,7 +4,7 @@ description: "Finds and organises files for LifeOS DeviceOS. Use when the user s
 license: MIT
 metadata:
   displayName: "DeviceOS Files"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

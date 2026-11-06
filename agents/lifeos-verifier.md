@@ -5,7 +5,7 @@ tools: Read, Grep, Glob
 license: MIT
 metadata:
   displayName: "LifeOS Verifier"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

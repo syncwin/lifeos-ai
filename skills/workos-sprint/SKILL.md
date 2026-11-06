@@ -4,7 +4,7 @@ description: "Weekly delivery plan for LifeOS WorkOS. Use when the user says \"p
 license: MIT
 metadata:
   displayName: "WorkOS Sprint"
-  version: "0.2.1"
+  version: "0.2.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

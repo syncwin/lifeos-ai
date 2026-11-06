@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.4] - 2026-11-06
+
+### Changed
+- Standing rule: research before building. Check current official docs and widely recommended, secure practice before choosing an approach, file, tool, config or dependency; cite the source; mark anything unverified; never guess; keep research scoped to the task.
+
 ## [0.2.3] - 2026-11-06
 ### Fixed
 - Stop log guard: LifeOS-session detection now checks the Skill name (not any text in its arguments), so other sessions that merely mention lifeos are never blocked. Blocks at most once per session (marker keyed by session_id in the temp dir). `mcp__memory__save_progress` counts as a log. If no log tool is visible, it warns once and does not block. Fails open on every error. Added tests/test_log_guard.py.
