@@ -5,7 +5,7 @@ LifeOS Claude plugin (`lifeos`, command `/lifeos`): router, feed, module skills,
 **Structure:** `skills/` (router `lifeos`, `lifeos-feed`, `lifeos-<module>`, `workos-*`, `deviceos-*`, `selfos-*`), `agents/lifeos-verifier.md`, `hooks/hooks.json`, `scripts/*_guard.py`, `evals/`, `prompts/`, `skills/lifeos/references/` (shared rules).
 
 ## Commands
-- Validate: `python -I -X utf8 A:\Dev\projects\ai-extender\skills\claude-reviewer\scripts\validate_extension.py . --target directory --strict` (expect 0 errors, 0 warnings)
+- Validate: `python -I -X utf8 A:\Dev\projects\aiaddon\skills\aiaddon-review\scripts\validate_extension.py . --target directory --strict` (expect 0 errors, 0 warnings)
 - Evals (real model calls): `claude plugin eval . --trust-plugin --ablation none --allow-tools Read Glob Grep Skill -j 4 --no-publish`. Write results outside the repo (`D:\SyncWin\AI Outputs\lifeos\eval-results`).
 - Rebuild eval cases: `python -I A:\Automation\plugin-evals\regen_evals.py . lifeos ""`
 
