@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-workos-sprint",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-workos-sprint",
+      "prompt": "Plan my week for work",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos-sprint (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-workos-sprint",
+      "prompt": "Re-plan the sprint after the new request",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos-sprint (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-workos-sprint",
+      "prompt": "Plan a birthday party",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-workos-sprint; answers normally or points to another tool."
+    }
+  ]
+}

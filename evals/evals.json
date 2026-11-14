@@ -12,25 +12,25 @@
       "id": 2,
       "skill": "lifeos",
       "prompt": "Plan my week for work",
-      "expected_output": "Routes via lifeos to lifeos-workos then workos-sprint: asks priorities first, reads capacity from EntityOS, builds one plan sized by outcome and waits for a yes.",
+      "expected_output": "Routes via lifeos to lifeos-workos then lifeos-workos-sprint: asks priorities first, reads capacity from EntityOS, builds one plan sized by outcome and waits for a yes.",
       "should_trigger": true,
-      "expected_skill": "workos-sprint"
+      "expected_skill": "lifeos-workos-sprint"
     },
     {
       "id": 3,
       "skill": "lifeos",
       "prompt": "Remind me to renew my passport next month",
-      "expected_output": "Routes to lifeos-selfos then selfos-reminders: parses what and when, shows the reminder and waits for a yes before creating it.",
+      "expected_output": "Routes to lifeos-selfos then lifeos-selfos-reminders: parses what and when, shows the reminder and waits for a yes before creating it.",
       "should_trigger": true,
-      "expected_skill": "selfos-reminders"
+      "expected_skill": "lifeos-selfos-reminders"
     },
     {
       "id": 4,
       "skill": "lifeos",
       "prompt": "Is my PC backup healthy?",
-      "expected_output": "Routes to lifeos-deviceos then deviceos-backup: reads the backup policy from EntityOS, stays read-only and reports evidence or UNKNOWN.",
+      "expected_output": "Routes to lifeos-deviceos then lifeos-deviceos-backup: reads the backup policy from EntityOS, stays read-only and reports evidence or UNKNOWN.",
       "should_trigger": true,
-      "expected_skill": "deviceos-backup"
+      "expected_skill": "lifeos-deviceos-backup"
     },
     {
       "id": 5,
@@ -44,9 +44,9 @@
       "id": 6,
       "skill": "lifeos",
       "prompt": "Log what I did today and plan tomorrow",
-      "expected_output": "Routes via lifeos to workos-log and workos-report: logs with evidence and builds the end-of-day report from the log.",
+      "expected_output": "Routes via lifeos to lifeos-workos-log and lifeos-workos-report: logs with evidence and builds the end-of-day report from the log.",
       "should_trigger": true,
-      "expected_skill": "workos-log"
+      "expected_skill": "lifeos-workos-log"
     },
     {
       "id": 7,
@@ -68,9 +68,9 @@
       "id": 9,
       "skill": "lifeos",
       "prompt": "A manager sent me a new request, add it to my plan",
-      "expected_output": "Routes via lifeos to workos-intake: saves the text verbatim first, maps it to existing tasks and lists decisions needed.",
+      "expected_output": "Routes via lifeos to lifeos-workos-intake: saves the text verbatim first, maps it to existing tasks and lists decisions needed.",
       "should_trigger": true,
-      "expected_skill": "workos-intake"
+      "expected_skill": "lifeos-workos-intake"
     },
     {
       "id": 10,

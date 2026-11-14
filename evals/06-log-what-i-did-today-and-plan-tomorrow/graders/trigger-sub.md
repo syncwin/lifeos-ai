@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: workos-log
+input_match: lifeos-workos-log
 min: 1
 ---
 
-The workos-log skill loads.
+The lifeos-workos-log skill loads.
