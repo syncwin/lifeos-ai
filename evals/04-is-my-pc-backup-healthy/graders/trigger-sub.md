@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: deviceos-backup
+input_match: lifeos-deviceos-backup
 min: 1
 ---
 
-The deviceos-backup skill loads.
+The lifeos-deviceos-backup skill loads.

@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.3.0] - 2026-11-14
+
+Directory-compliant single-branch layout. `main` is both the public repo and the Anthropic plugin directory source; the shipped plugin is `adapters/claude/` and is text only.
+
+### Renamed (old name -> new name)
+- Skills: `deviceos-backup` -> `lifeos-deviceos-backup`, `deviceos-files` -> `lifeos-deviceos-files`, `deviceos-health` -> `lifeos-deviceos-health`, `selfos-reminders` -> `lifeos-selfos-reminders`, `selfos-routines` -> `lifeos-selfos-routines`, `selfos-tasks` -> `lifeos-selfos-tasks`, `workos-demand`, `workos-intake`, `workos-log`, `workos-report`, `workos-results`, `workos-sprint`, `workos-writing` -> the same name with the `lifeos-` prefix.
+- Agent: `lifeos-verifier` -> `lifeos-verify`.
+
+### Removed from the plugin
+- `hooks/hooks.json`, `scripts/*.py` (`data_guard`, `log_guard`, `scope_guard`, `screen_text`, `sync_shared`, `injection_model.json`) and `skills/workos-writing/scripts/check_draft.py`. They moved unchanged to `dev/` (`dev/hooks`, `dev/scripts`), with the test in `dev/tests`.
+- The `metadata` block in every skill and agent frontmatter (directory policy wants text-only frontmatter). The version lives in `plugin.json` and the marketplace entry.
+- The `shared/` folder and its sync: the five shared references (`rules`, `scratchpad`, `risk-check`, `tracker`, `entityos-offline`) were identical copies in every skill. They now live once in `skills/lifeos/references/` and every other skill points to `../lifeos/references/`. Nothing in them changed.
+
+### Added (hook and script behaviour as recipes, no feature lost)
+- Router "Required steps" table and a "Routing table" with tie-breaks and a default question (`evals/router/cases.json`).
+- `skills/lifeos/references/scope-guard.md` (scope_guard: code-host calls against the EntityOS allowlist, ask before a push to main), `entityos-write-confirm.md` (the EntityOS write-confirmation hook), `screen-text.md` (data_guard and screen_text: judged injection screen), `log-guard.md` (log_guard: log once before stopping).
+- `skills/lifeos-workos-writing/references/writing-check.md` (check_draft: the deterministic draft check by reading).
+- `.public-safety-allow`, `PUBLIC-SAFETY.md`, public-safety `.gitignore` preset, CI (`ci.yml`).
+
+### Changed
+- Release workflow builds `lifeos.plugin` from `adapters/claude` and asserts no code ships; `.mcp.json` (the EntityOS remote connector and its `userConfig`) is unchanged.
+- Local paths removed from `AGENTS.md` and `evals/RESULTS.md`; docs describe the new layout. Old history hits (local paths, the public support address) are allowlisted, not rewritten.
+- The judged injection screen has no numeric score (the old script's classifier cannot be reproduced by reading).
+
 ## [0.2.4] - 2026-11-06
 
 ### Changed

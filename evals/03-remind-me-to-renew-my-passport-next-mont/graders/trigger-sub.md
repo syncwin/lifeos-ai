@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: selfos-reminders
+input_match: lifeos-selfos-reminders
 min: 1
 ---
 
-The selfos-reminders skill loads.
+The lifeos-selfos-reminders skill loads.

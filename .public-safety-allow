@@ -1,0 +1,17 @@
+# False positives for scan_secrets.py. Only exact, intentional values, each tied to the file that holds it.
+# Format: <rule>:<path-glob>[:<value-substring>]
+# The plugin's public support address (it is the published contact, not personal data):
+email:README.md:support@syncwin.com
+email:CHANGELOG.md:support@syncwin.com
+email:PUBLIC-SAFETY.md:support@syncwin.com
+email:.claude-plugin/marketplace.json:support@syncwin.com
+email:adapters/claude/.claude-plugin/plugin.json:support@syncwin.com
+email:adapters/claude/PUBLIC-SAFETY.md:support@syncwin.com
+email:adapters/claude/CHANGELOG.md:support@syncwin.com
+email:.public-safety-allow:support@syncwin.com
+# Git history only (old commits, no history rewrite; folder paths and the public contact, no credential involved):
+drive-path:AGENTS.md:A:\Dev
+drive-path:AGENTS.md:D:\SyncWin
+drive-path:AGENTS.md:A:\Automation
+drive-path:evals/RESULTS.md:D:\SyncWin
+email:.claude-plugin/plugin.json:support@syncwin.com

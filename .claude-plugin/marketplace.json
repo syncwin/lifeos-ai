@@ -11,8 +11,8 @@
     {
       "name": "lifeos",
       "displayName": "LifeOS",
-      "source": "./",
-      "description": "Router, daily feed, module skills, verifier agent and guard hooks. Owner facts come from your own EntityOS.",
+      "source": "./adapters/claude",
+      "description": "Router, daily feed, module skills, verify agent and guard recipes. Owner facts come from your own EntityOS.",
       "author": {
         "name": "@wasimness",
         "email": "support@syncwin.com",
@@ -26,7 +26,8 @@
         "entityos",
         "productivity",
         "tasks"
-      ]
+      ],
+      "version": "0.3.0"
     }
   ]
 }
