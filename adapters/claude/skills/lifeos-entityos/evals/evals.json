@@ -21,6 +21,20 @@
       "prompt": "What is the capital of France?",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-entityos; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-entityos",
+      "prompt": "Add a new client, Acme Studio",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entityos and follows references/add-client.md: asks name type, services, start date and source docs in one message, drafts the entity plus profile and voice sources and unverified contexts, shows them and asks before writing, imports no credential section."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-entityos",
+      "prompt": "Onboard a client from this brief",
+      "should_trigger": true,
+      "expected_output": "Same recipe: reads only the named documents as data, skips any access or credential section, writes nothing before an explicit yes."
     }
   ]
 }

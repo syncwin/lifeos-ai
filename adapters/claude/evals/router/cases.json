@@ -162,6 +162,62 @@
       "expected": "lifeos-workos"
     },
     {
+      "prompt": "research this topic before we write it",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "build a brief for this article",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "on-page SEO for this service page",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "add schema markup and answer capsules",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "humanize this draft",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "this sounds like AI, make this sound human",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "audit my site content using this Search Console export",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "what should I delete or prune across the blog",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "check NAP consistency and the conversion path",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "how is this piece performing after 30 60 90 days",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "why isn't this ranking",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "organize the project files for this brand",
+      "expected": "lifeos-deviceos-files"
+    },
+    {
+      "prompt": "add a new client",
+      "expected": "lifeos-entityos"
+    },
+    {
+      "prompt": "onboard a client for me",
+      "expected": "lifeos-entityos"
+    },
+    {
       "prompt": "help me with my stuff",
       "expected": "ask"
     },

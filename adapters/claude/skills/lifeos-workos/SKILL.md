@@ -20,6 +20,19 @@ Start: run the `lifeos` router first if it has not run.
 
 Stage order when several apply: intake, sprint, log, report, results. Stages inherit the shared rules; a stage with a stale upstream input lists it as a task and does not run it.
 
+## Plugin handoffs
+Not ported into LifeOS; installed plugins do this work. Pass brand context from EntityOS (`get_context`, `search_context`); if the plugin is not installed, say so and name it. Rules that travel: `lifeos/references/core-rules.md`, Handoffs to installed plugins.
+
+| Request | Plugin |
+|---|---|
+| Content research, content briefs and outlines | `content-structure-strategy` |
+| On-page SEO and AEO | `content-seo-strategy` |
+| Drafting voice, humanizing | `humanizeai` |
+| Whole-site content audit (exports, prune, merge) | `content-audit-strategy` |
+| Site, entity and conversion audit | `content-audit-strategy` plus EntityOS facts |
+| Per-piece performance check-ins (30, 60, 90 days) | `content-performance-tracker` |
+| Project file organizing | `lifeos-deviceos-files` |
+
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.
 - The request went to the stage in the table; stale upstream stages are listed as proposed tasks, not run.

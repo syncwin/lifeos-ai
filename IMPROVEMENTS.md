@@ -6,6 +6,7 @@ Log feedback and ideas here; move to Accepted when approved.
 Format: date · idea · source
 
 - 2026-11-04 · Budget guard for scrapers (balance, estimate, stop floor) · plan Block 1
+- 2026-11-15 · pending: EntityOS records / LifeOS template refs (see retention plan): compliance-and-sourcing rules -> EntityOS policy records; writing-patterns template -> EntityOS; brand-voice, persona, client-profile, business-unit and authoritative-sources templates and the example instances -> EntityOS records or LifeOS template references; the site, entity and conversion audit-methods reference -> `content-audit-strategy` handoff or a LifeOS reference · strategist port
 
 ## Accepted
 

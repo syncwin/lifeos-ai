@@ -13,6 +13,7 @@ Start: run the `lifeos` router first if it has not run.
 3. Gates: first reading at 28 days (verdict no better than "too early"), verdict allowed at 8 weeks, final at 12. Flat means failed and returns as a task.
 4. Readings are taken only in this stage; every other stage reads stored verdicts.
 5. Label each number [DATA]; unmeasurable items say why.
+6. A number moved or fell: diagnose it with `references/decline-diagnosis-method.md` (segment first, separate events); verdict table and AI-visibility panel: `lifeos-workos-demand/references/scoring-and-verdict-framework.md`.
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.

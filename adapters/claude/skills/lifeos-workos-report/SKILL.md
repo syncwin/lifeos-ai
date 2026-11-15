@@ -9,9 +9,10 @@ Needs: EntityOS MCP; task store; `lifeos-workos-log` rows for the day.
 Start: run the `lifeos` router first if it has not run.
 
 1. Audience and headings: `search_context("audiences, report headings, tone")`. Missing: ask once.
-2. Start: priorities, objectives in triage order, blockers, open manager questions, task plan with estimates.
-3. End: finished, produced, carried; evidence per item; one tracker write for the whole day. Last working day of the week folds in the week end.
-4. Plain words, no jargon. Verify against the log before saving.
+2. Open and Close templates and their rules (no hours as achievement, failed attempts count, `None` for empty sections): `lifeos-workos-sprint/references/execution-and-reporting.md`; tracker write rules: `lifeos-workos-sprint/references/workbook-and-tracker-spec.md`.
+3. Start: priorities, objectives in triage order, blockers, open manager questions, task plan with estimates.
+4. End: finished, produced, carried; evidence per item; one tracker write for the whole day. Last working day of the week folds in the week end.
+5. Plain words, no jargon. Verify against the log before saving.
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.

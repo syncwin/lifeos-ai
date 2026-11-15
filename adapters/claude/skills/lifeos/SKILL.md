@@ -21,6 +21,7 @@ Classify the request, then load exactly one skill. Several modules means run the
 | Saves, links, notes, search, learning | `lifeos-knowledgeos` |
 | "Is this done / check this" on any deliverable | agent `lifeos-verify` |
 | "Where does this value belong", where a fact or setting is stored | `lifeos-entityos` |
+| Content research and briefs; on-page SEO and AEO; drafting voice and humanizing; whole-site content audit; per-piece performance check-ins; site, entity and conversion audit | installed plugins, see Plugin handoffs below |
 | Out of scope: writing or fixing code | `/fsdevops` |
 | Out of scope: WordPress themes, plugins, sites | `/fswpdevops` |
 | Out of scope: operating an app's own UI (clicking, publishing in Nowa and similar) | `/appops` |
@@ -51,17 +52,25 @@ Read top to bottom; a row matches when any trigger phrase appears in the request
 | 8 | routine; wind-down; wind down | `lifeos-selfos-routines` | (none) |
 | 9 | add a task; on my plate; to-do list; mark done; overdue | `lifeos-selfos-tasks` | (none) |
 | 10 | backup; backups; test a restore | `lifeos-deviceos-backup` | (none) |
-| 11 | find my file; where is that file; clean up this folder; organise my downloads; move these files; where do outputs go | `lifeos-deviceos-files` | (none) |
+| 11 | find my file; where is that file; clean up this folder; organise my downloads; move these files; where do outputs go; organize the project files; organise the project files; project files are outdated | `lifeos-deviceos-files` | (none) |
 | 12 | pc healthy; why is my pc slow; disk space; phone battery; eating memory; needs updating | `lifeos-deviceos-health` | (none) |
 | 13 | set up an automation; automation; deviceos | `lifeos-deviceos` | (none) |
 | 14 | expense; receipt; bills; subscriptions; on budget; moneyos | `lifeos-moneyos` | (none) |
 | 15 | save this link; save this; what did i save; bookmark; note this down; what should i learn next | `lifeos-knowledgeos` | (none) |
 | 16 | feed; daily drop; what is new for me | `lifeos-feed` | (none) |
-| 17 | what do i know about; who is; which brands; remember that; still true; where does this value belong; where is this stored | `lifeos-entityos` | (none) |
+| 17 | add a new client; onboard a client; what do i know about; who is; which brands; remember that; still true; where does this value belong; where is this stored | `lifeos-entityos` | (none) |
 | 18 | selfos; insurance document; personal life | `lifeos-selfos` | (none) |
 | 19 | workos; clients; projects; follow-ups | `lifeos-workos` | (none) |
+| 20 | research this topic; content brief; build a brief; content outline | `lifeos-workos` | hand off to plugin content-structure-strategy; pass brand context from EntityOS |
+| 21 | on-page seo; aeo; answer engine; schema markup; seo audit of this page | `lifeos-workos` | hand off to plugin content-seo-strategy; pass brand context from EntityOS |
+| 22 | humanize; sounds like ai; make this sound human; ai-written | `lifeos-workos` | hand off to plugin humanizeai; pass voice from EntityOS |
+| 23 | audit my site; whole-site content audit; prune merge; what should i delete; search console export | `lifeos-workos` | hand off to plugin content-audit-strategy; pass brand context from EntityOS |
+| 24 | 30 60 90; how is this piece performing; why isn't this ranking; check-in on published | `lifeos-workos` | hand off to plugin content-performance-tracker; pass the baseline and expected outcome |
+| 25 | audit entity; nap consistency; conversion path; is my site converting | `lifeos-workos` | hand off to plugin content-audit-strategy; add EntityOS facts as the reference |
 
-**Tie-breaks** (the row order encodes them): a request that both records work and plans ahead starts with the log row, then the report row; a backup question goes to the backup stage, not the health stage; a stored-fact question goes to `lifeos-entityos`; "check this draft" goes to the writing check, never to `lifeos-verify`.
+**Tie-breaks** (the row order encodes them): a request that both records work and plans ahead starts with the log row, then the report row; a backup question goes to the backup stage, not the health stage; a stored-fact question goes to `lifeos-entityos`; "check this draft" goes to the writing check, never to `lifeos-verify`; "humanize" goes to `humanizeai`, but "check this draft" for banned phrases stays with the writing check; a whole-site audit or entity audit goes to `content-audit-strategy`, while one published piece's check-in goes to `content-performance-tracker`.
+
+**Plugin handoffs (rows 20 to 25; not ported into LifeOS):** the row loads `lifeos-workos`, whose Plugin handoffs table names the plugin. The work belongs to a separate installed plugin: name it and invoke it with the Skill tool, passing brand context from EntityOS (`get_context` / `search_context`): voice, audience, conversion definition, approved sources, constraints, entity facts. If the plugin is not installed, say so and name it; do not do its work from memory. Rules that travel with each handoff: `references/core-rules.md`, Handoffs to installed plugins. Project file organizing is not a plugin: it goes to `lifeos-deviceos-files` (row 11). A research, brief, draft, review chain runs on in order (`content-structure-strategy`, then `lifeos-workos-writing` with `humanizeai`) without asking at each step.
 
 **Default when no row matches:** if the request is about the owner's own work, tasks, devices, money or saves but fits no row, ask one closed question and stop: "Is this (a) work, (b) personal tasks and reminders, (c) devices and backups, (d) money, (e) saves and learning, or (f) none of these?" A request to decide what to focus on today stays in this router: read `search_context("priorities")`, ask once if missing, never invent one. Never start the task itself in the routing step.
 

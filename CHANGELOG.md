@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.0] - 2026-11-15
+
+Strategist port: the brand-agnostic methods of the retired strategist plugin move into LifeOS. Every brand fact is read from EntityOS at run time (`get_context`, `get_policy`, `search_context`); no skill carries brand, owner, client, regulator or example data.
+
+### Added
+- `skills/lifeos/references/core-rules.md` (shared): the seven rules, token discipline, clarification gate, brief completeness gate, companion plugins, dependency tiers, open-questions queue, absorbing outside items, file naming and publishing identity, file precedence, never-invent list, stage boundaries, plugin handoff rules (research, briefs, site and entity audit, performance check-ins) and file-organizing rules.
+- `lifeos-workos-sprint/references/execution-and-reporting.md` and `workbook-and-tracker-spec.md` (also used by `lifeos-workos-report` and `lifeos-workos-log`): sprint cadence, commitment and WIP rules, sequencing, the content boundary, execute-a-task steps, deliverables by stage, Open and Close day reports, tracker tabs, Findings fields, append-only snapshots and write discipline (tracker written once a day at close).
+- `lifeos-workos-demand/references/scoring-and-verdict-framework.md` and `cluster-and-treatment-model.md`: exclusion gate, opportunity score, calibration, one-asset test, keyword mapping, CTR curve, verdicts, AI-visibility panel; cluster model, five page treatments, one ranked queue, six content rules, handoff to the content pipeline.
+- `lifeos-workos-results/references/decline-diagnosis-method.md`: decision tree, segmenting, dilution, concurrent events, migration signatures, AI answer surfaces.
+- `lifeos-workos-writing/references/writing-standards.md`: four-exception rule, paragraph and heading mechanics, meta block, linking and CTA rules, the three humanize checkpoints, the standalone-humanization preservation contract, the three review passes and the two review files.
+- Router routes 20 to 25 load `lifeos-workos`, whose Plugin handoffs table names the installed plugin (`content-structure-strategy`, `content-seo-strategy`, `humanizeai`, `content-audit-strategy`, `content-performance-tracker`); brand context is passed from EntityOS and a missing plugin is named. Project file organizing routes to `lifeos-deviceos-files`. 14 new router eval cases.
+- `lifeos-entityos/references/add-client.md`: "add a new client" / "onboard a client" recipe. Asks the basics, drafts the entity (relation client, engagement block), profile and voice sources and `unverified` draft contexts, asks before writing, never imports access or credential sections. Two router cases and two skill evals.
+
+### Changed
+- Each affected SKILL.md points to its new references at the step where they apply.
+
 ## [0.3.1] - 2026-11-15
 
 ### Changed

@@ -9,9 +9,10 @@ Needs: EntityOS MCP.
 Start: run the `lifeos` router first if it has not run.
 
 1. Markets and audiences: `search_context("markets, audiences")`.
-2. Rule: a query cluster becomes a page only if one asset can answer several of its queries together. Otherwise it stays a keyword list.
-3. Per cluster output: queries, the single asset that would answer them, PASS or FAIL, one line why.
-4. Passing clusters get a brief: intent, entities, sources, questions to answer. Review it against the checklist before any drafting.
+2. Scoring, exclusion gate, clustering, keyword mapping: `references/scoring-and-verdict-framework.md`. Cluster model, the five page treatments, one ranked queue and the handoff to the content pipeline: `references/cluster-and-treatment-model.md`.
+3. Rule: a query cluster becomes a page only if one asset can answer several of its queries together. Otherwise it stays a keyword list.
+4. Per cluster output: queries, the single asset that would answer them, PASS or FAIL, one line why.
+5. Passing clusters get a brief: intent, entities, sources, questions to answer. Briefs and on-page SEO go to `content-structure-strategy` and `content-seo-strategy` with brand context from EntityOS (`lifeos/references/core-rules.md`). Review it against the checklist before any drafting.
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.

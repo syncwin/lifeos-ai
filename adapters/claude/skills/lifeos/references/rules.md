@@ -1,5 +1,5 @@
 # LifeOS shared rules
-Every skill inherits these. Each rule is canonical here, once, and stage skills point to it instead of restating it. This is the single copy: every other skill reads it from `../lifeos/references/`.
+Every skill inherits these. Each rule is canonical here, once, and stage skills point to it instead of restating it. This is the single copy: every other skill reads it from `lifeos/references/`.
 
 ## Owner facts (canonical here)
 No owner fact lives in this plugin. Read it at run time with EntityOS `search_context(query)`, `get_entity`, `list_entities`. Not found: ask once, then offer to store the answer. EntityOS missing: `entityos-offline.md`. Standard queries:
