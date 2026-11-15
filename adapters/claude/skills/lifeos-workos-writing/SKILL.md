@@ -12,7 +12,8 @@ Start: run the `lifeos` router first if it has not run.
 2. Check against `references/patterns.md`; cite findings by pattern number with line.
 3. Run the checks in `references/writing-check.md` on the draft (banned terms from step 1). They give PASS, WARN, FAIL or SKIP with line numbers for length, headings and banned phrases; include that output.
 4. Do not rewrite unless asked; report first.
-5. Drafting and review rules (humanize checkpoints, three review passes, preservation contract, the two review files): `references/writing-standards.md`.
+5. Per-business patterns live in EntityOS brand context, start empty and grow from reviewer pattern frequency; never pre-populate guessed patterns (`references/patterns.md`, Maintaining the glossary).
+6. Drafting and review rules (humanize checkpoints, three review passes, preservation contract, the two review files): `references/writing-standards.md`.
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.

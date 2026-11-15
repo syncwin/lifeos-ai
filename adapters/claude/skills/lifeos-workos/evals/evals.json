@@ -21,6 +21,20 @@
       "prompt": "Fix the failing unit test in my repo",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-workos; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos",
+      "prompt": "Audit my site for entity consistency and tracking",
+      "should_trigger": true,
+      "expected_output": "Runs the audit with references/audit-methods.md and EntityOS facts: consistency sweep by property, tracking diagnosis state first, consent flagged for a privacy professional; does not hand it to content-audit-strategy."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-workos",
+      "prompt": "Find me a content niche for this brand",
+      "should_trigger": true,
+      "expected_output": "Hands off to the content-niche-discovery plugin with brand context from EntityOS, or says it is not installed and names it."
     }
   ]
 }

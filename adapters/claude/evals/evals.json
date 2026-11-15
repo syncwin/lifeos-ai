@@ -99,6 +99,22 @@
       "prompt": "Click the Deploy button in Nowa for me",
       "expected_output": "Does not use LifeOS; this is app UI operation.",
       "should_trigger": false
+    },
+    {
+      "id": 14,
+      "skill": "lifeos",
+      "prompt": "Build a content brief for this article",
+      "expected_output": "Routes via lifeos to lifeos-workos, which hands off to content-structure-strategy with brand context from EntityOS, or names the plugin if it is not installed.",
+      "should_trigger": true,
+      "expected_skill": "lifeos-workos"
+    },
+    {
+      "id": 15,
+      "skill": "lifeos",
+      "prompt": "Plan my sprint without loading my tasks",
+      "expected_output": "Loads the LifeOS task store first and stops and says so if it cannot, instead of planning from memory.",
+      "should_trigger": true,
+      "expected_skill": "lifeos-workos-sprint"
     }
   ]
 }

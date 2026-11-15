@@ -21,6 +21,20 @@
       "prompt": "Plan a birthday party",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-workos-sprint; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos-sprint",
+      "prompt": "Plan my week and size it to what I can really deliver",
+      "should_trigger": true,
+      "expected_output": "Loads the task store first, asks confirmed working days and wanted tasks, commits about 65% of hours, caps work in progress at two, lists exclusions, shows the plan and saves only after a yes."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-workos-sprint",
+      "prompt": "Do task 3.2 from the sprint",
+      "should_trigger": true,
+      "expected_output": "Reads the task in full, checks the dependency tier, verifies current state, produces the literal deliverable, records a baseline before any live-page change and logs to the sprint log, not the store."
     }
   ]
 }

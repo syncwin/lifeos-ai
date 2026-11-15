@@ -21,6 +21,13 @@
       "prompt": "Print the git log of this repo",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-workos-log; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos-log",
+      "prompt": "Log what I did today with evidence",
+      "should_trigger": true,
+      "expected_output": "Writes one log row per unit of work with evidence, tag and status; decisions and questions in their own tables; does not write the tracker mid-day."
     }
   ]
 }

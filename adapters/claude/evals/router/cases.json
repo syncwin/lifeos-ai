@@ -218,6 +218,18 @@
       "expected": "lifeos-entityos"
     },
     {
+      "prompt": "run a consistency sweep on my listings",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "we are cited but never named in AI answers",
+      "expected": "lifeos-workos"
+    },
+    {
+      "prompt": "find me a niche for a new site",
+      "expected": "lifeos-workos"
+    },
+    {
       "prompt": "help me with my stuff",
       "expected": "ask"
     },

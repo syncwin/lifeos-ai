@@ -12,8 +12,14 @@ Strategist port: the brand-agnostic methods of the retired strategist plugin mov
 - `lifeos-workos-writing/references/writing-standards.md`: four-exception rule, paragraph and heading mechanics, meta block, linking and CTA rules, the three humanize checkpoints, the standalone-humanization preservation contract, the three review passes and the two review files.
 - Router routes 20 to 25 load `lifeos-workos`, whose Plugin handoffs table names the installed plugin (`content-structure-strategy`, `content-seo-strategy`, `humanizeai`, `content-audit-strategy`, `content-performance-tracker`); brand context is passed from EntityOS and a missing plugin is named. Project file organizing routes to `lifeos-deviceos-files`. 14 new router eval cases.
 - `lifeos-entityos/references/add-client.md`: "add a new client" / "onboard a client" recipe. Asks the basics, drafts the entity (relation client, engagement block), profile and voice sources and `unverified` draft contexts, asks before writing, never imports access or credential sections. Two router cases and two skill evals.
+- `lifeos-workos/references/audit-methods.md`: site (AEO extractability), entity (cited-but-never-named, consistency sweep, local listing, author identity, reviews, social) and conversion-path (capture inventory, tracking diagnosis, consent) methods, so LifeOS runs the audit itself; `content-audit-strategy` stays for whole-site content inventories. `content-niche-discovery` added to the plugin handoffs.
+- `lifeos-workos-writing/references/patterns.md`: patterns 11 to 14 and the pattern intake protocol. Per-business patterns live in EntityOS brand context, start empty and grow from reviewer pattern frequency; never pre-populated.
+- `lifeos-entityos/references/add-client.md`: update check, batched intake, multi-brand check, persona and voice records with the authorship convention, the approved-sources research method (method only), global versus local facts, closing confirmation.
+- Stage gate, business selector (entity from `list_entities`, relation owned or client) and per-stage details in `lifeos-workos` and the router; the router and prompt warn that sprint and planning stages without the current task store drop tasks, and load the store first (`prompts/lifeos.json`).
+- Skill evals for the ported stages and 3 more router cases.
 
 ### Changed
+- `workbook-and-tracker-spec.md` rewritten as the field and column guide for the one LifeOS task store (the two-workbook model is dropped; write once at the day close, never rename kept).
 - Each affected SKILL.md points to its new references at the step where they apply.
 
 ## [0.3.1] - 2026-11-15

@@ -21,7 +21,7 @@ Classify the request, then load exactly one skill. Several modules means run the
 | Saves, links, notes, search, learning | `lifeos-knowledgeos` |
 | "Is this done / check this" on any deliverable | agent `lifeos-verify` |
 | "Where does this value belong", where a fact or setting is stored | `lifeos-entityos` |
-| Content research and briefs; on-page SEO and AEO; drafting voice and humanizing; whole-site content audit; per-piece performance check-ins; site, entity and conversion audit | installed plugins, see Plugin handoffs below |
+| Content research and briefs; on-page SEO and AEO; drafting voice and humanizing; whole-site content audit; per-piece performance check-ins; niche discovery (installed plugins); site, entity and conversion audit (LifeOS, `lifeos-workos/references/audit-methods.md`) | installed plugins, see Plugin handoffs below |
 | Out of scope: writing or fixing code | `/fsdevops` |
 | Out of scope: WordPress themes, plugins, sites | `/fswpdevops` |
 | Out of scope: operating an app's own UI (clicking, publishing in Nowa and similar) | `/appops` |
@@ -32,6 +32,7 @@ Classify the request, then load exactly one skill. Several modules means run the
 2. Stage prerequisites: `search_context("stage prerequisites, freshness limits")`. A stale upstream stage is listed as a proposed task, not run.
 3. Diagnose the cause before auditing or fixing.
 4. Never answer stage work yourself; load the stage skill.
+5. Stage gate and task store: route to the chosen stage only and load only its references; sprint and planning stages load the LifeOS task store (`references/tracker.md`) first, since tasks missing from the plan are silently dropped (`lifeos-workos` carries the business selector and details to collect).
 
 Shared rules (owner facts, approvals, evidence labels, change control): `references/rules.md`. Risky actions: `references/risk-check.md`. Task store spec: `references/tracker.md`.
 
@@ -66,11 +67,12 @@ Read top to bottom; a row matches when any trigger phrase appears in the request
 | 22 | humanize; sounds like ai; make this sound human; ai-written | `lifeos-workos` | hand off to plugin humanizeai; pass voice from EntityOS |
 | 23 | audit my site; whole-site content audit; prune merge; what should i delete; search console export | `lifeos-workos` | hand off to plugin content-audit-strategy; pass brand context from EntityOS |
 | 24 | 30 60 90; how is this piece performing; why isn't this ranking; check-in on published | `lifeos-workos` | hand off to plugin content-performance-tracker; pass the baseline and expected outcome |
-| 25 | audit entity; nap consistency; conversion path; is my site converting | `lifeos-workos` | hand off to plugin content-audit-strategy; add EntityOS facts as the reference |
+| 25 | audit entity; nap consistency; conversion path; is my site converting; consistency sweep; cited but never named; tracking diagnosis; consent audit | `lifeos-workos` | run the audit with the audit methods reference in lifeos-workos and EntityOS facts |
+| 26 | find me a niche; niche ideas; what should i write about | `lifeos-workos` | hand off to plugin content-niche-discovery; pass brand context from EntityOS |
 
 **Tie-breaks** (the row order encodes them): a request that both records work and plans ahead starts with the log row, then the report row; a backup question goes to the backup stage, not the health stage; a stored-fact question goes to `lifeos-entityos`; "check this draft" goes to the writing check, never to `lifeos-verify`; "humanize" goes to `humanizeai`, but "check this draft" for banned phrases stays with the writing check; a whole-site audit or entity audit goes to `content-audit-strategy`, while one published piece's check-in goes to `content-performance-tracker`.
 
-**Plugin handoffs (rows 20 to 25; not ported into LifeOS):** the row loads `lifeos-workos`, whose Plugin handoffs table names the plugin. The work belongs to a separate installed plugin: name it and invoke it with the Skill tool, passing brand context from EntityOS (`get_context` / `search_context`): voice, audience, conversion definition, approved sources, constraints, entity facts. If the plugin is not installed, say so and name it; do not do its work from memory. Rules that travel with each handoff: `references/core-rules.md`, Handoffs to installed plugins. Project file organizing is not a plugin: it goes to `lifeos-deviceos-files` (row 11). A research, brief, draft, review chain runs on in order (`content-structure-strategy`, then `lifeos-workos-writing` with `humanizeai`) without asking at each step.
+**Plugin handoffs (rows 20 to 24 and 26; row 25, the site, entity and conversion audit, is run by LifeOS itself with `lifeos-workos/references/audit-methods.md`):** the row loads `lifeos-workos`, whose Plugin handoffs table names the plugin. The work belongs to a separate installed plugin: name it and invoke it with the Skill tool, passing brand context from EntityOS (`get_context` / `search_context`): voice, audience, conversion definition, approved sources, constraints, entity facts. If the plugin is not installed, say so and name it; do not do its work from memory. Rules that travel with each handoff: `references/core-rules.md`, Handoffs to installed plugins. Project file organizing is not a plugin: it goes to `lifeos-deviceos-files` (row 11). A research, brief, draft, review chain runs on in order (`content-structure-strategy`, then `lifeos-workos-writing` with `humanizeai`) without asking at each step.
 
 **Default when no row matches:** if the request is about the owner's own work, tasks, devices, money or saves but fits no row, ask one closed question and stop: "Is this (a) work, (b) personal tasks and reminders, (c) devices and backups, (d) money, (e) saves and learning, or (f) none of these?" A request to decide what to focus on today stays in this router: read `search_context("priorities")`, ask once if missing, never invent one. Never start the task itself in the routing step.
 

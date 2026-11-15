@@ -5,7 +5,7 @@ Method for `lifeos-workos-sprint`, also read by `lifeos-workos-report` and `life
 Contents: one sprint; cadence versus measurement; outcome not hours; before starting and sizing; commitment; shape; Plan Week; sequencing; dependencies; sprint record; exclusions; estimating; content boundary; execute a task; update; deliverables by stage; non-negotiables; day reports (Open, Close).
 
 ## One sprint across every business unit
-There is one sprint, across all units and both kinds of work (content and web/ops). A second sprint anywhere is a defect: the operator has one working day and cannot run two. Upstream stages decide what to do; this one does it and records it.
+There is one sprint, across all units and both kinds of work (content and web/ops), in the one task store. A second sprint anywhere is a defect: the operator has one working day and cannot run two. Upstream stages decide what to do; this one does it and records it.
 
 ## A sprint is a delivery cadence, not a measurement window
 A sprint (commonly one week) is how work gets committed and shipped. Results run on a slower loop (commonly 8 to 12 weeks), so a sprint reports what was finished and can never report whether it worked. The sprint reports output; the results reading reports outcome, on its own schedule. A sprint that ships good work into a market that has not responded yet is still a successful sprint; say so plainly.
