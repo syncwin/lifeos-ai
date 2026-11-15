@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1] - 2026-11-15
+
+### Changed
+- Module switch: the router now calls the LifeOS MCP tool `lifeos_list_modules` once per session when it is available and uses its result (new `skills/lifeos/references/module-list.md`); without the tool it asks once, as before.
+
 ## [0.3.0] - 2026-11-14
 
 Directory-compliant single-branch layout. `main` is both the public repo and the Anthropic plugin directory source; the shipped plugin is `adapters/claude/` and is text only.

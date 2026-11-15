@@ -27,7 +27,7 @@ Classify the request, then load exactly one skill. Several modules means run the
 
 ## 2. Gate
 0. Asked to edit or customise LifeOS skills: refuse in-session (core change control in `references/rules.md`), offer a one or two sentence feedback note, and point to EntityOS for personal preferences such as voice.
-1. Module switch: ask the LifeOS module list when connected (a disabled module is declined and named, never deleted); otherwise ask once.
+1. Module switch: follow `references/module-list.md` (call `lifeos_list_modules` once per session when the LifeOS MCP tool is available; a disabled module is declined and named, never deleted; otherwise ask once).
 2. Stage prerequisites: `search_context("stage prerequisites, freshness limits")`. A stale upstream stage is listed as a proposed task, not run.
 3. Diagnose the cause before auditing or fixing.
 4. Never answer stage work yourself; load the stage skill.
