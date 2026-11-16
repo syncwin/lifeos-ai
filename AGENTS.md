@@ -12,7 +12,7 @@ LifeOS Claude plugin (`lifeos`, command `/lifeos`): router, feed, module skills,
 - Evals (real model calls): `claude plugin eval adapters/claude --trust-plugin --ablation none --allow-tools Read Glob Grep Skill -j 4 --no-publish`. Write results outside the repo (`<owner-outputs>/lifeos/eval-results`).
 
 ## Rules
-- **Directory compliance:** the shipped plugin is Markdown, JSON and YAML only (plus LICENSE and `.gitignore`): no hooks, no scripts, text-only frontmatter (no `metadata` block). Hook and script behaviour lives as recipes in `skills/lifeos/references/` and `skills/lifeos-workos-writing/references/`; the Python in `dev/` is maintainer tooling.
+- **Directory compliance:** the shipped plugin is Markdown, JSON and YAML only (plus LICENSE and `.gitignore`): no hooks, no scripts, text-only skill frontmatter (no `metadata` block in SKILL.md files). `plugin.json` keeps its top-level `metadata` object: the Claude Code manifest docs list it as a valid free-form field that Claude Code ignores. Hook and script behaviour lives as recipes in `skills/lifeos/references/` and `skills/lifeos-workos-writing/references/`; the Python in `dev/` is maintainer tooling.
 - Never hardcode an owner fact, name, path, brand or URL. Add a new `search_context` query to `skills/lifeos/references/rules.md` instead.
 - Never pick skill or other permanent names without the user's confirmation. Every non-router skill and agent is prefixed `lifeos-`.
 - Keep each `SKILL.md` short; shared rules live once in `skills/lifeos/references/` (other skills point to `../lifeos/references/`).
