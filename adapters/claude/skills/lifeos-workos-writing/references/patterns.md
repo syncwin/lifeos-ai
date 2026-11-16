@@ -13,7 +13,7 @@
 
 11. Table data restated in the surrounding prose (introduce a table in a full sentence, add context, do not repeat its numbers: duplication reads as padding and gives a figure two places to go stale).
 12. Heading level labels (`H2:` and similar) printed as visible text instead of rendered as real headings (labels are structure markers for the drafter, not content).
-13. Dates in the article body (a "last updated" line, "as of [month and year]", a bare year hung on a statistic) unless the owner's policy in EntityOS allows them; a source citation's own publication date is the exception, because it belongs to the source.
+13. Dates in the article body (a "last updated" line, "as of [month and year]", a bare year hung on a statistic) unless the owner's policy in EntityOS allows them (fix: state the fact plainly, and where a figure needs its period, fold the period into the fact itself instead of presenting it as a freshness marker; why: a dated page reads stale a quarter later even when every figure is still correct); a source citation's own publication date is the exception, because it belongs to the source.
 14. An audience or customer segment list that omits the real majority segment named in the audience record (give the majority segment its own explicit mention).
 
 Notes: pattern 1 also holds this business's own industry swap list (a jargon term is replaced by what it means, not by a synonym that still needs specialist knowledge); pattern 10 covers one language variant per document, with quoted source material keeping its original spelling.

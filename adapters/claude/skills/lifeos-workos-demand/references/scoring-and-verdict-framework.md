@@ -7,7 +7,7 @@ Method for `lifeos-workos-demand` (scoring, clustering, mapping) and `lifeos-wor
 - **New-content and rewrite candidates stay separated**: an existing page is never presented as a new-content recommendation.
 - Site health and decline diagnosis are not assessed here: forward one line to `content-audit-strategy` (site) or `lifeos-workos-results` (decline). Competitor work stops at public search presence (pages, structure, entity signals, citation footprint), not business model or pricing.
 - Ask for the date range explicitly; a 28-day default is too short for this read. Open the run by stating what was inferred in three or four lines: domain, market, date range, filters, sitemap contents, anything missing.
-- Modes: scoring always runs; competitor analysis runs before any first content plan and is not optional then; evergreen discovery runs on the schedule the business record sets; results mode runs at the top of every session, before scoring, because a verdict on a treatment type changes what is recommended next.
+- Modes: scoring always runs; competitor analysis runs before any first content plan and is not optional then; evergreen discovery runs on the schedule the business record sets; results mode runs at the top of every session, before scoring, because a verdict on a treatment type is evidence that changes what is recommended next.
 
 ## Workflow (ten steps)
 1. **Exclusion gate first** (below).
@@ -22,7 +22,16 @@ Method for `lifeos-workos-demand` (scoring, clustering, mapping) and `lifeos-wor
 10. **Keyword and content mapping**: every relevant query to exactly one existing or planned item, so downstream stages read one map instead of re-deriving coverage.
 
 ## The exclusion gate: runs before scoring, not after
-Build the exclusion list from the business record's constraints and no-gos first. A forbidden query is never scored: flag it in "Do Not Create" with a reason. Scoring a forbidden query and rejecting it afterward invites relitigating it. A high-scoring forbidden query goes in "Do Not Create", never presented as a missed opportunity.
+Build the exclusion list from the business record's constraints and no-gos first. A forbidden query is never scored: flag it in "Do Not Create" with a reason. Scoring a forbidden query and rejecting it afterward invites relitigating it. A high-scoring forbidden query goes in "Do Not Create", never presented as a missed opportunity. Anything on the list is refused at source and listed with its reason. A query or topic whose top result already answers the question outright, leaving negligible click-through, has no traffic value regardless of impression count: disqualify it at the gate.
+
+## Scoring axes
+Score every candidate on four axes, shown broken out, never collapsed into one number without the parts visible:
+1. **Demand:** real search or conversational volume for the business's actual market, not a generic or national estimate unless the business genuinely is national.
+2. **Winnability:** who currently ranks or answers this, and whether the business has a real right to compete (existing authority, unique inventory, data or service coverage). A cluster held entirely by institutional or unbeatable incumbents is not an opportunity: it is a target that needs re-aiming or dropping.
+3. **Realism:** does a real, comparable business already make money or gain leads doing this?
+4. **AI-Era resilience:** would one AI-assistant answer fully satisfy the searcher, with nothing this content adds? If yes, deprioritize hard regardless of volume.
+
+**Brand and entity terms are excluded from scoring**: they rank because of the brand, not because of the content.
 
 ## Opportunity score, 0 to 100 (default weights)
 | Component | Default weight | Input | Rule |
@@ -63,14 +72,18 @@ Weight by volume, never average raw CTR or raw position. Apply the noise floor b
 ## Conversational clustering and the one-asset test
 Cluster semantic-first, then validate against real results: token or embedding similarity is intent-blind. Before consolidating or committing to a cluster, check that the top current results overlap (roughly three or four shared results in the top ten is the working threshold). **Coverage matched on a slug or title alone is unverified** and cannot enter the top action bucket.
 
-Write every cluster in **conversational form**, the way a real person would ask, before scoring; a cluster whose conversational form cannot be written drops to low confidence. Never invent one to fit a keyword; label an invented one a hypothesis.
+Write every cluster in **conversational form**, the way a real person would ask, not a bare keyword, before scoring; a cluster whose conversational form cannot be written drops to low confidence. Never invent a conversational query to fit a keyword: take it from the actual query export, "people also ask"-type data, the AI-visibility panel, or documented real questions; an invented one is labelled a hypothesis.
 
-**The one-asset test:** can one strong page, comparison table or tool answer several of these queries together? If yes, that is one real cluster. If no, it was a list of keywords wearing a cluster's name: send it back.
+Cluster semantically first, then regroup by the *situation* the asker is in: two queries sharing almost no words belong together when one asset answers both; two sharing most words split apart when they need different pages. Where semantic and situational clustering disagree, **the situation wins**, and say which clusters were regrouped and why.
+
+**The one-asset test:** can one strong page, comparison table or tool answer several of these queries together? If yes, that is one real cluster. If no, it was a list of keywords wearing a cluster's name: send it back rather than forward.
+
+**The asset is not always an article.** A comparison table wins where the asker is choosing between named options. A tool wins where the answer is arithmetic the reader cannot do in their head. Check the business's existing site inventory before proposing a tool that already exists.
 
 **Striking distance is a working range, not a hard boundary** (roughly positions 4 to 15 for search-ranked content): rank inside it by volume and intent, not by position alone; an item at position 12 with high volume beats one at position 8 with negligible volume.
 
 ## Coverage check
-**Covered**: drop, count it. **Partial** (ranking or existing but wrong intent): rewrite candidate, forwarded to the planning half (`cluster-and-treatment-model.md`), excluded from the new-content action plan. **Gap**: eligible for scoring.
+Match clusters against the business's sitemap and existing content. **Covered**: drop, count it. **Partial** (ranking or existing but wrong intent): rewrite candidate, forwarded to the planning half (`cluster-and-treatment-model.md`), excluded from the new-content action plan. **Gap**: eligible for scoring.
 
 ## Keyword and content mapping
 Attach every relevant query to exactly one existing or planned content item, never two. Tag every term with one action:
@@ -93,7 +106,7 @@ Append an AEO-question flag to any question-form query: it becomes an H3 or FAQ 
 Runs on its own schedule. Draws from the approved sources in EntityOS (`search_context("approved sources")`). **Never scored on the four axes, always marked low confidence** until validated by actual results.
 
 ## Competitor and winnability analysis
-Required before a first content plan. For each contested cluster: who currently wins, what their page has that this business's does not, whether the target is genuinely winnable. **State when a target is not winnable and what to aim at instead.** Never build a competitor set from reputation alone.
+Required before a first content plan. For each contested cluster: who currently wins, what their page has that this business's does not, whether the target is genuinely winnable. **State when a target is not winnable and what to aim at instead**: this is usually the most valuable output of competitor work and the part most often left out. Never build a competitor set from reputation alone: a well-known name ranking for nothing does not belong in the table.
 
 ## Report format
 **Ceiling: 40 lines per section.** If it does not change a decision, it does not go in; detail belongs in the underlying data. Sections, each stating "none" in one line if empty: (1) run summary (business, date range, filter, files used, what was missing); (2) what the demand says, 3 to 4 lines; (3) content-type taxonomy considered (not just one default type); (4) scored opportunity table, one row per recommendation, sorted by priority rank; (5) opportunity detail for the top two buckets only: suggested title, target queries, intent, why it exists, evidence, content type, an answer-target sentence with a figure and its date, estimated impact (labelled an estimate), lead potential (labelled modelled or measured), links and cluster, effort, confidence, publish-by; (6) fix-before-creating (CTR anomalies and cannibalization, cheaper to fix than to write something new); (7) rewrite candidates (partial coverage, excluded from the new-content plan, forwarded to planning); (8) evergreen candidates, always low confidence; (9) do-not-create, every exclusion with a reason; (10) coverage audit summary, including how many verdicts were verified versus matched superficially; (11) method and limits (what ran on real data versus proxies, whether calibration fired, whether an AI surface makes projections optimistic).
@@ -102,7 +115,7 @@ Required before a first content plan. For each contested cluster: who currently 
 
 **Non-negotiables:** no metric the data does not contain; every third-party estimate labelled an estimate; no comparison period means the trend multiplier is 1.0, stated plainly; brand and entity terms excluded from scoring; the do-not-create list is mandatory; never invent a conversational query (label it a hypothesis); a verdict without a baseline is Unmeasurable, never inferred; never attribute a page's movement to a change without a stated mechanism.
 
-**Output location:** scoring writes opportunity rows (`plan_items`, `kind = opportunity`, every Do Not Create row with its reason), competitor mode writes Winnability on scored rows, evergreen writes opportunity rows at low confidence, results mode writes Latest and Verdict on tracked rows (`lifeos-workos-sprint/references/workbook-and-tracker-spec.md`). Every Findings row carries Figure, Window, Filter, Source and Date in their own columns; no separate durable file.
+**Output location:** scoring writes opportunity rows (`plan_items`, `kind = opportunity`, every Do Not Create row with its reason), competitor mode writes Winnability on scored rows, evergreen writes opportunity rows at low confidence, results mode writes Latest and Verdict on tracked rows (`lifeos-workos-sprint/references/workbook-and-tracker-spec.md`). Every Findings row carries Figure, Window, Filter, Source and Date in their own columns (a row that cannot fill them is an observation, not a finding); no separate durable file.
 
 ## Building this business's own CTR curve
 **A single universal curve is not defensible**: CTR varies by intent, brand versus non-brand, device, market, and what else is on the results page; a benchmark curve built before AI answer surfaces became common describes a layout that may no longer exist. Build the site's own curve from three to six months of the business's own market-filtered data, brand queries excluded; round position to whole numbers and band it (1, 2, 3, 4, 5, 6 to 10, 11 to 20, 21 to 50, 51+); **weight by volume, never average raw CTR**; require a minimum volume per band before trusting it, falling back to a benchmark shape only for thin bands; record the curve's date and window as a Decision and rebuild it periodically. State every run how many bands came from the business's own data versus a benchmark.
@@ -118,9 +131,9 @@ Results mode, at the top of every session, for every tracked item with a verdict
 | **Too Early** | Inside the first-read window (commonly about 28 days); never called success or failure yet. |
 | **Working** | Clear positive movement at the final read window (commonly 8 to 12 weeks), attributable with a stated mechanism. |
 | **Failed** | Clear negative or flat movement at the final read window, no positive mechanism found. |
-| **Confounded** | A competing event landed in the same window: not attributable either way, and the verdict says which event. |
+| **Confounded** | A competing event (migration, algorithm or platform change, a competitor's own move) landed in the same window: not attributable either way, and the verdict says which event. |
 
 **A `Working` verdict on a treatment type raises the score of similar queued items; a `Failed` one lowers them.** Never attribute movement to a change without a stated mechanism: correlation across one period is not causation.
 
 ## AI-visibility panel
-A fixed prompt set, in conversational form, run on a consistent schedule across the AI assistants the business cares about, logged out, with a consistent market and language filter and the same order across every assistant. The set changes only through a logged Decision saying what changed and why. Track **Cited** and **Named** as separate, never-combined metrics: the gap between them is the finding. A business named often but rarely cited usually has a structure or schema problem (route to `content-audit-strategy` and `content-seo-strategy` with EntityOS facts), not a content-quality problem; a prompt flipping to absent across every surface at once is an entity problem, not a content problem. A single-cycle move of one or two points is noise; direction across three consecutive captures is the shortest span worth calling a trend.
+A fixed prompt set, in conversational form, run on a consistent schedule across the AI assistants the business cares about, logged out, with a consistent market and language filter and the same order across every assistant. The set changes only through a logged Decision saying what changed and why. Track **Cited** (linked as a source) and **Named** (mentioned without a link) as separate, never-combined metrics: the gap between them is itself the finding. A business named often but rarely cited usually has a structure or schema problem (route to `content-audit-strategy` and `content-seo-strategy` with EntityOS facts), not a content-quality problem; a prompt flipping to absent across every surface at once is an entity problem, not a content problem. A single-cycle move of one or two points is noise; direction across three consecutive captures is the shortest span worth calling a trend.
