@@ -4,7 +4,7 @@ LifeOS is a Claude plugin for running your own work, devices and life from one p
 
 **Download:** [lifeos.plugin](https://github.com/syncwin/lifeos-ai/releases/latest/download/lifeos.plugin) (always the latest release)
 
-**Version** 0.3.0 - **Author** SyncWin - **License** MIT
+**Version** 0.4.0 - **Author** SyncWin - **License** MIT
 
 **No personal data ships with it.** Every owner fact (priorities, brands, voice, allowed repos) is read at run time from your own EntityOS MCP endpoint.
 
@@ -13,7 +13,7 @@ LifeOS is a Claude plugin for running your own work, devices and life from one p
 claude plugin marketplace add syncwin/lifeos-ai
 claude plugin install lifeos@syncwin-lifeos
 ```
-Then open `/plugin`, choose Installed, Configure options, and set your EntityOS URL and token. The plugin is text only and needs no Python or other install.
+Then open `/plugin`, choose Installed, Configure options, and set the two options: `entityos_url` (your EntityOS MCP URL) and `entityos_token` (your access token, stored in secure storage and marked sensitive). Until both are set the EntityOS connector shows as invalid. The plugin is text only and needs no Python or other install.
 
 ## Connector
 | Connector | Used by | Purpose | Auth | Data sent |
