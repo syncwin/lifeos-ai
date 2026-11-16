@@ -7,6 +7,7 @@ license: MIT
 # WorkOS Log
 Needs: task store (`lifeos/references/tracker.md`); EntityOS MCP for tag vocabulary.
 Start: run the `lifeos` router first if it has not run.
+Method (log line format, sprint log versus tracker, baselines, question queue): `lifeos-workos-sprint/references/execution-and-reporting.md`, `lifeos/references/core-rules.md`.
 
 1. Log as you go: one row per unit of work with what, evidence (path, link, command output), tag, status.
 2. Decisions, questions and flags go to their own tables, not into free text.

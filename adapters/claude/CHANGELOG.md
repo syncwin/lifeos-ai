@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.4.0] - 2026-11-15
+
+Strategist port: the brand-agnostic methods of the retired strategist plugin move into LifeOS. Every brand fact is read from EntityOS at run time (`get_context`, `get_policy`, `search_context`); no skill carries brand, owner, client, regulator or example data.
+
+### Added
+- `skills/lifeos/references/core-rules.md` (shared): the seven rules, token discipline, clarification gate, brief completeness gate, companion plugins, dependency tiers, open-questions queue, absorbing outside items, file naming and publishing identity, file precedence, never-invent list, stage boundaries, plugin handoff rules (research, briefs, site and entity audit, performance check-ins) and file-organizing rules.
+- `lifeos-workos-sprint/references/execution-and-reporting.md` and `workbook-and-tracker-spec.md` (also used by `lifeos-workos-report` and `lifeos-workos-log`): sprint cadence, commitment and WIP rules, sequencing, the content boundary, execute-a-task steps, deliverables by stage, Open and Close day reports, tracker tabs, Findings fields, append-only snapshots and write discipline (tracker written once a day at close).
+- `lifeos-workos-demand/references/scoring-and-verdict-framework.md` and `cluster-and-treatment-model.md`: exclusion gate, opportunity score, calibration, one-asset test, keyword mapping, CTR curve, verdicts, AI-visibility panel; cluster model, five page treatments, one ranked queue, six content rules, handoff to the content pipeline.
+- `lifeos-workos-results/references/decline-diagnosis-method.md`: decision tree, segmenting, dilution, concurrent events, migration signatures, AI answer surfaces.
+- `lifeos-workos-writing/references/writing-standards.md`: four-exception rule, paragraph and heading mechanics, meta block, linking and CTA rules, the three humanize checkpoints, the standalone-humanization preservation contract, the three review passes and the two review files.
+- Router routes 20 to 25 load `lifeos-workos`, whose Plugin handoffs table names the installed plugin (`content-structure-strategy`, `content-seo-strategy`, `humanizeai`, `content-audit-strategy`, `content-performance-tracker`); brand context is passed from EntityOS and a missing plugin is named. Project file organizing routes to `lifeos-deviceos-files`. 14 new router eval cases.
+- `lifeos-entityos/references/add-client.md`: "add a new client" / "onboard a client" recipe. Asks the basics, drafts the entity (relation client, engagement block), profile and voice sources and `unverified` draft contexts, asks before writing, never imports access or credential sections. Two router cases and two skill evals.
+- `lifeos-workos/references/audit-methods.md`: site (AEO extractability), entity (cited-but-never-named, consistency sweep, local listing, author identity, reviews, social) and conversion-path (capture inventory, tracking diagnosis, consent) methods, so LifeOS runs the audit itself; `content-audit-strategy` stays for whole-site content inventories. `content-niche-discovery` added to the plugin handoffs.
+- `lifeos-workos-writing/references/patterns.md`: patterns 11 to 14 and the pattern intake protocol. Per-business patterns live in EntityOS brand context, start empty and grow from reviewer pattern frequency; never pre-populated.
+- `lifeos-entityos/references/add-client.md`: update check, batched intake, multi-brand check, persona and voice records with the authorship convention, the approved-sources research method (method only), global versus local facts, closing confirmation.
+- Stage gate, business selector (entity from `list_entities`, relation owned or client) and per-stage details in `lifeos-workos` and the router; the router and prompt warn that sprint and planning stages without the current task store drop tasks, and load the store first (`prompts/lifeos.json`).
+- Skill evals for the ported stages and 3 more router cases.
+
+### Changed
+- `workbook-and-tracker-spec.md` rewritten as the field and column guide for the one LifeOS task store (the two-workbook model is dropped; write once at the day close, never rename kept).
+- Each affected SKILL.md points to its new references at the step where they apply.
+
 ## [0.3.1] - 2026-11-15
 
 ### Changed

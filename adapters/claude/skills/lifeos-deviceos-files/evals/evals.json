@@ -21,6 +21,13 @@
       "prompt": "Create a new React component for a navbar",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-deviceos-files; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-deviceos-files",
+      "prompt": "Organize the project files for this brand",
+      "should_trigger": true,
+      "expected_output": "Does a quick check or full audit with one decision per file, never renames a tracker, shows moves in a risk-check block and moves to the holding folder only after the exact reply."
     }
   ]
 }

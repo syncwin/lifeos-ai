@@ -9,7 +9,7 @@ Needs: EntityOS MCP; task store.
 Start: run the `lifeos` router first if it has not run.
 
 1. Ask priorities first. Read `search_context("priorities")`, `search_context("working hours, capacity, owners per task type")`.
-2. Gather open tasks from every list, blocked items, the question queue.
+2. Gather open tasks from every list, blocked items, the question queue. Method for sizing, sequencing, executing a task, the content boundary and day reports: `references/execution-and-reporting.md`; tracker structure: `references/workbook-and-tracker-spec.md`. Shared rules: `lifeos/references/core-rules.md`.
 3. Write one sprint row and plan items sized by outcome, not hours. Two tasks in progress at most. Estimates that carry over stay visibly marked.
 4. Stale upstream stages (intake, results) appear as proposed tasks, not as run work.
 5. List exclusions with the reason.

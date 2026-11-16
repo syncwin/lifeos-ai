@@ -21,6 +21,20 @@
       "prompt": "Run the performance benchmark in my code",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-workos-results; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos-results",
+      "prompt": "Why did my organic traffic drop last month?",
+      "should_trigger": true,
+      "expected_output": "Checks the export window and filter, segments by page and query before naming a cause, separates concurrent events with their shares and never merges them into one cause."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-workos-results",
+      "prompt": "Did the change I shipped three weeks ago work?",
+      "should_trigger": true,
+      "expected_output": "Finds the baseline or returns Unmeasurable, applies the 28 day gate (Too Early at best) and attributes movement only with a stated mechanism."
     }
   ]
 }

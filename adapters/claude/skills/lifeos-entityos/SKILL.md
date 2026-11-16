@@ -13,11 +13,13 @@ Start: run the `lifeos` router first if it has not run.
 2. Not found: say so, ask once, and offer to store the answer through EntityOS if a write tool is connected (`lifeos/references/risk-check.md`; confirm the write first, `lifeos/references/entityos-write-confirm.md`); otherwise note it in the task log as an open question.
 3. Conflicting claims: show both with sources and dates; the owner decides. Never merge silently.
 4. Facts come only from what EntityOS returned this run (`lifeos/references/rules.md`, Owner facts).
+5. "Add a new client X" or "onboard a client": follow `references/add-client.md` (ask the basics, draft the records, show them, write only after a yes).
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.
 - Every claim quotes its EntityOS source from this run; not-found items are asked once and marked [UNKNOWN].
 - Conflicting claims were shown side by side with sources and dates, never merged.
+- An add-client run showed all drafts before writing, wrote only after a yes, marked contexts unverified and imported no access or credential section.
 
 ## Handoff
 Delivered: The answer with sources, or the stored fact the owner confirmed.

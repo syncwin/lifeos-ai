@@ -21,6 +21,13 @@
       "prompt": "Write a quarterly financial report for investors",
       "should_trigger": false,
       "expected_output": "Does not load lifeos-workos-report; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos-report",
+      "prompt": "Close my day",
+      "should_trigger": true,
+      "expected_output": "Writes a Close report of finished work only, no hours as achievement, failed attempts counted, one store write for the day, checked against the log."
     }
   ]
 }
