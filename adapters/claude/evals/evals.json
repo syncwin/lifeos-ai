@@ -59,7 +59,7 @@
     {
       "id": 8,
       "skill": "lifeos",
-      "prompt": "Save this link and tell me what I saved about Flutter before",
+      "prompt": "Save this link and tell me what I saved about my app project before",
       "expected_output": "Routes to lifeos-knowledgeos: captures the link with tags and searches saved items with sources.",
       "should_trigger": true,
       "expected_skill": "lifeos-knowledgeos"

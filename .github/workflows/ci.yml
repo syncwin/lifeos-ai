@@ -1,7 +1,7 @@
 name: CI
 
-# Checks on every push and pull request. main is the only branch: adapters/claude is the text-only plugin
-# that the Anthropic plugin directory tracks, and dev/ holds maintainer-only scripts that never ship.
+# Checks on every push and pull request. main is the only branch: adapters/ holds the text-only plugins (adapters/claude is the core that
+# the Anthropic plugin directory tracks), and dev/ holds maintainer-only scripts that never ship.
 on:
   push:
     branches: [main]
@@ -41,9 +41,21 @@ jobs:
       - name: Unit tests
         run: |
           for t in dev/tests/test_*.py; do python "$t"; done
-      - name: Validate the plugin for the directory (blocking)
-        run: python .checker-tools/dev/aiaddon-review/scripts/validate_extension.py adapters/claude --strict --target directory --require-meta author,company
-      - name: Check the router against its evals
-        run: python .checker-tools/dev/aiaddon-review/scripts/route_check.py adapters/claude
+      - name: Plugin references in sync with the core
+        run: python -I -X utf8 dev/scripts/sync_plugin_refs.py --check
+      - name: Validate every plugin for the directory (blocking)
+        run: |
+          for d in adapters/*/; do
+            echo "== $d"
+            python .checker-tools/dev/aiaddon-review/scripts/validate_extension.py "${d%/}" --strict --target directory --require-meta author,company || exit 1
+          done
+      - name: Check each router against its evals
+        run: |
+          for d in adapters/*/; do
+            if [ -f "${d}evals/router/cases.json" ]; then
+              echo "== $d"
+              python .checker-tools/dev/aiaddon-review/scripts/route_check.py "${d%/}" || exit 1
+            fi
+          done
       - name: Scan the tree and the full git history for secrets and private data (blocking)
         run: python .checker-tools/dev/aiaddon-review/scripts/scan_secrets.py . --history

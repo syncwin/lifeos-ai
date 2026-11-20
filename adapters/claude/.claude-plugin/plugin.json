@@ -1,8 +1,8 @@
 {
   "name": "lifeos",
   "displayName": "LifeOS",
-  "version": "0.4.0",
-  "description": "LifeOS: a personal operating system for work, devices and life. Router, daily feed, module skills, a verify agent and guard recipes; every owner fact comes from EntityOS.",
+  "version": "0.5.0",
+  "description": "LifeOS core: the /lifeos router, the EntityOS MCP connection, shared rules, a verify agent and guard recipes. Module plugins (SelfOS, WorkOS, DeviceOS, KnowledgeOS, MoneyOS, EntityOS, Feed) add the skills; every owner fact comes from EntityOS.",
   "author": {
     "name": "@wasimness",
     "company": "SyncWin",
@@ -39,7 +39,7 @@
   },
   "metadata": {
     "displayName": "LifeOS",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

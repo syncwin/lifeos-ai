@@ -1,0 +1,37 @@
+{
+  "name": "lifeos-workos",
+  "displayName": "LifeOS WorkOS",
+  "version": "0.5.0",
+  "description": "LifeOS WorkOS: work planning, logging, reports, results, requests, content planning, writing checks and the content chain (research, brief, draft, review). Needs the core lifeos plugin for the MCP connection and shared rules.",
+  "author": {
+    "name": "@wasimness",
+    "company": "SyncWin",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "homepage": "https://syncwin.com",
+  "repository": "https://github.com/syncwin/lifeos-ai",
+  "license": "MIT",
+  "keywords": [
+    "lifeos",
+    "workos",
+    "planning",
+    "content",
+    "writing",
+    "reports"
+  ],
+  "documentationUrl": "https://github.com/syncwin/lifeos-ai#readme",
+  "supportUrl": "https://github.com/syncwin/lifeos-ai/issues",
+  "privacyPolicyUrl": "https://syncwin.com/privacy-policy/",
+  "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
+  "metadata": {
+    "displayName": "LifeOS WorkOS",
+    "version": "0.5.0",
+    "releaseStage": "alpha",
+    "author": "@wasimness",
+    "company": "SyncWin",
+    "homepage": "https://syncwin.com",
+    "repository": "https://github.com/syncwin/lifeos-ai",
+    "license": "MIT"
+  }
+}

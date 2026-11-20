@@ -6,6 +6,7 @@ email:CHANGELOG.md:support@syncwin.com
 email:PUBLIC-SAFETY.md:support@syncwin.com
 email:.claude-plugin/marketplace.json:support@syncwin.com
 email:adapters/claude/.claude-plugin/plugin.json:support@syncwin.com
+email:adapters/lifeos-*/.claude-plugin/plugin.json:support@syncwin.com
 email:adapters/claude/PUBLIC-SAFETY.md:support@syncwin.com
 email:adapters/claude/CHANGELOG.md:support@syncwin.com
 email:.public-safety-allow:support@syncwin.com

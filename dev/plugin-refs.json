@@ -1,0 +1,61 @@
+{
+  "core": "adapters/claude/skills/lifeos/references",
+  "plugins": {
+    "lifeos-deviceos": [
+      "core-rules.md",
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "tracker.md"
+    ],
+    "lifeos-entityos": [
+      "core-rules.md",
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "screen-text.md",
+      "tracker.md"
+    ],
+    "lifeos-feed": [
+      "scratchpad.md"
+    ],
+    "lifeos-knowledgeos": [
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "tracker.md"
+    ],
+    "lifeos-moneyos": [
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "tracker.md"
+    ],
+    "lifeos-selfos": [
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "tracker.md"
+    ],
+    "lifeos-workos": [
+      "core-rules.md",
+      "entityos-offline.md",
+      "entityos-write-confirm.md",
+      "risk-check.md",
+      "rules.md",
+      "scratchpad.md",
+      "screen-text.md",
+      "tracker.md"
+    ]
+  }
+}

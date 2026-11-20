@@ -163,11 +163,11 @@
     },
     {
       "prompt": "research this topic before we write it",
-      "expected": "lifeos-workos"
+      "expected": "lifeos-workos-research"
     },
     {
       "prompt": "build a brief for this article",
-      "expected": "lifeos-workos"
+      "expected": "lifeos-workos-brief"
     },
     {
       "prompt": "on-page SEO for this service page",
@@ -236,6 +236,58 @@
     {
       "prompt": "sort out my life",
       "expected": "ask"
+    },
+    {
+      "prompt": "build the fact table for this brief",
+      "expected": "lifeos-workos-research"
+    },
+    {
+      "prompt": "write up a content outline for this topic",
+      "expected": "lifeos-workos-brief"
+    },
+    {
+      "prompt": "draft this article from the brief",
+      "expected": "lifeos-workos-draft"
+    },
+    {
+      "prompt": "write the draft for the new service page",
+      "expected": "lifeos-workos-draft"
+    },
+    {
+      "prompt": "is this ready to publish",
+      "expected": "lifeos-workos-review"
+    },
+    {
+      "prompt": "run the final review and the fact-lock on this piece",
+      "expected": "lifeos-workos-review"
+    },
+    {
+      "prompt": "do a compliance check before it goes out",
+      "expected": "lifeos-workos-review"
+    },
+    {
+      "prompt": "draft this article for my client",
+      "expected": "lifeos-workos-draft"
+    },
+    {
+      "prompt": "content brief for the client project",
+      "expected": "lifeos-workos-brief"
+    },
+    {
+      "prompt": "research this topic for a client",
+      "expected": "lifeos-workos-research"
+    },
+    {
+      "prompt": "structure this page for me",
+      "expected": "lifeos-workos-brief"
+    },
+    {
+      "prompt": "write the body of this page",
+      "expected": "lifeos-workos-draft"
+    },
+    {
+      "prompt": "No brief yet, research first",
+      "expected": "lifeos-workos-research"
     }
   ]
 }
