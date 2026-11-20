@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.0] - 2026-11-20
+
+Split into eight plugins in one marketplace, all released together at 0.5.0. Behaviour of the existing skills is unchanged.
+
+### Added
+- Seven module plugins, each its own folder under `adapters/`: `lifeos-selfos`, `lifeos-workos`, `lifeos-deviceos`, `lifeos-knowledgeos`, `lifeos-moneyos`, `lifeos-entityos`, `lifeos-feed`. Each has a manifest without options or connection, README, CHANGELOG, LICENSE, `.gitignore` and `references/` copies of the core rules its skills read. The starter skill of each module says it needs the core `lifeos` plugin and stops when its tools are missing.
+- Four WorkOS content-chain skills: `lifeos-workos-research` (sourced fact table and gap list), `lifeos-workos-brief` (labelled outline with keyword tiers and a completeness gate), `lifeos-workos-draft` (draft from the brief with voice and required wording read from EntityOS) and `lifeos-workos-review` (humanize check, compliance loop, fact-lock and compliance gates, reader pass). Business facts are read at run time as EntityOS claims; skills cite claim IDs or answer `[UNKNOWN]`. Router rows 20, 27, 28 and 29 and seven router cases.
+- `dev/scripts/sync_plugin_refs.py` and `dev/plugin-refs.json`: copy the core's shared references into each module plugin; `--check` exits 1 on drift and runs in CI. CI now validates every `adapters/*` plugin and runs the router check where router evals exist.
+- `CREDITS.md`.
+
+### Changed
+- The core `lifeos` plugin keeps the router, `skills/lifeos/references/`, `agents/lifeos-verify.md`, `.mcp.json`, the options, the prompt and the router evals; the router loads skills as `<plugin>:<skill>` and names a module plugin that is not installed.
+- Skills moved with `git mv` and kept their evals. Pointers to shared rules are `${CLAUDE_PLUGIN_ROOT}/references/<file>` and resolve inside the plugin. The WorkOS method files shared by several stages (sprint, demand and writing references) moved to the plugin's `references/`, which fixes the cross-skill pointers in the log, report and results stages.
+- Router out-of-scope and routing evals: owner-specific stacks in eval prompts replaced by neutral wording.
+
 ## [0.4.0] - 2026-11-15
 
 Strategist port: the brand-agnostic methods of the retired strategist plugin move into LifeOS. Every brand fact is read from EntityOS at run time (`get_context`, `get_policy`, `search_context`); no skill carries brand, owner, client, regulator or example data.

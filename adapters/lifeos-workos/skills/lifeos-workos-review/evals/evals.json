@@ -1,0 +1,40 @@
+{
+  "skill_name": "lifeos-workos-review",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-workos-review",
+      "prompt": "Run the final review on this draft",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos-review (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-workos-review",
+      "prompt": "Is this ready to publish?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos-review (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-workos-review",
+      "prompt": "Do a fact-lock and compliance check on this piece",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-workos-review (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-workos-review",
+      "prompt": "Format my spreadsheet as a table",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-workos-review; answers normally or points to another tool."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-workos-review",
+      "prompt": "Run the final review on this draft, using what you already know about my business",
+      "should_trigger": true,
+      "expected_output": "Runs Pass 0, Pass A, the fact-lock and compliance gates and Pass B, cites claim IDs or answers [UNKNOWN], and delivers exactly two review files."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "_note": "Router cases for this plugin: expected = the skill the routing table in the router skill must pick. Checked by route_check.py.",
+  "cases": [
+    {
+      "prompt": "is my PC backup healthy",
+      "expected": "lifeos-deviceos-backup"
+    },
+    {
+      "prompt": "did the backup run last night",
+      "expected": "lifeos-deviceos-backup"
+    },
+    {
+      "prompt": "where is that file I downloaded",
+      "expected": "lifeos-deviceos-files"
+    },
+    {
+      "prompt": "clean up this folder",
+      "expected": "lifeos-deviceos-files"
+    },
+    {
+      "prompt": "why is my PC slow",
+      "expected": "lifeos-deviceos-health"
+    },
+    {
+      "prompt": "how much disk space is left",
+      "expected": "lifeos-deviceos-health"
+    },
+    {
+      "prompt": "set up an automation for my PC",
+      "expected": "lifeos-deviceos"
+    },
+    {
+      "prompt": "open deviceos",
+      "expected": "lifeos-deviceos"
+    },
+    {
+      "prompt": "organize the project files for this brand",
+      "expected": "lifeos-deviceos-files"
+    },
+    {
+      "prompt": "my gadgets are acting strange",
+      "expected": "ask"
+    },
+    {
+      "prompt": "can you take a look at this",
+      "expected": "ask"
+    }
+  ]
+}

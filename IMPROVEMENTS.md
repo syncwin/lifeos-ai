@@ -16,3 +16,6 @@ Format: date · idea · source
 - 2026-11-15 | Store guard hook (block destructive SQL, wildcard selects) | plan Block 1 | not needed: the Worker runs only fixed parameterized SQL and has no raw-SQL tool (worker src/db.ts); revisit if one is added
 - 2026-11-15 | Draft, link, contrast and image check scripts for `workos-writing` | plan Block 1 | covered by the lifeos-workos-writing references/writing-check.md recipe; the Python checker stays in dev/
 - 2026-11-15 | Wire module switches to the LifeOS MCP `list_modules` tool | plan Block 1 | done in 0.3.1
+
+## Follow-up: multi-platform converter (decided 2026-11-20)
+LifeOS should work from Claude, Codex, Grok, Hermes Agent and other platforms through one remote MCP server. Workflows are written once in plain Markdown. A build step converts them into each platform's format. As of 0.5.0, skill bodies avoid Claude-only wording. Three Claude-specific items are left for the converter to rewrite, because the Claude directory validator requires them: the `${CLAUDE_PLUGIN_ROOT}` reference paths, the "Skill tool" loader line in the 4 routers (rule P026), and the frontmatter/plugin.json packaging.

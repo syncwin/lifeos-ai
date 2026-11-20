@@ -1,6 +1,6 @@
 name: Release plugin
 
-# Builds lifeos.plugin from the plugin.json version and attaches it to the GitHub release.
+# Builds one <plugin>.plugin per adapters/* folder (all must share one version) and attaches them to the GitHub release.
 # One-click download: https://github.com/syncwin/lifeos-ai/releases/latest/download/lifeos.plugin
 on:
   push:
@@ -16,13 +16,11 @@ concurrency:
 
 jobs:
   release:
-    name: Build and attach lifeos.plugin
+    name: Build and attach the plugin packages
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       NAME: "LifeOS"
-      ASSET: lifeos.plugin
-      ROOT: adapters/claude
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -32,33 +30,39 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, os, zipfile
-          root, asset = os.environ["ROOT"], os.environ["ASSET"]
-          version = json.load(open(os.path.join(root, ".claude-plugin", "plugin.json"), encoding="utf-8"))["version"]
+          import glob
           skip_dirs = {".git", ".github", ".claude", "tests", "node_modules", "__pycache__", "evals", "prompts", "dist"}
           skip_files = {"IMPROVEMENTS.md", ".public-safety-allow"}
-          os.makedirs("dist", exist_ok=True)
-          out = os.path.join(os.getcwd(), "dist", asset)
-          if os.path.exists(out):
-              os.remove(out)
-          with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-              for d, dirs, files in os.walk(root):
-                  dirs[:] = sorted(x for x in dirs if x not in skip_dirs)
-                  for f in sorted(files):
-                      if f in skip_files or f.endswith(".pyc"):
-                          continue
-                      p = os.path.join(d, f)
-                      z.write(p, os.path.relpath(p, root).replace(os.sep, "/"))
           text_ext = {".md", ".json", ".yaml", ".yml", ".txt"}
           text_names = {"LICENSE", ".gitignore"}
-          with zipfile.ZipFile(out) as z:
-              names = z.namelist()
-              assert ".claude-plugin/plugin.json" in names, "plugin.json missing at zip root"
-              bad = [n for n in names if os.path.splitext(n)[1].lower() not in text_ext and os.path.basename(n) not in text_names]
-              assert not bad, "non-text files must not ship: " + ", ".join(bad)
-              assert not [n for n in names if n.split("/")[0] in ("hooks", "scripts")], "hooks and scripts must not ship"
+          os.makedirs("dist", exist_ok=True)
+          versions = set()
+          for root in sorted(glob.glob("adapters/*/")):
+              meta = json.load(open(os.path.join(root, ".claude-plugin", "plugin.json"), encoding="utf-8"))
+              versions.add(meta["version"])
+              out = os.path.join(os.getcwd(), "dist", meta["name"] + ".plugin")
+              if os.path.exists(out):
+                  os.remove(out)
+              with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+                  for d, dirs, files in os.walk(root):
+                      dirs[:] = sorted(x for x in dirs if x not in skip_dirs)
+                      for f in sorted(files):
+                          if f in skip_files or f.endswith(".pyc"):
+                              continue
+                          p = os.path.join(d, f)
+                          z.write(p, os.path.relpath(p, root).replace(os.sep, "/"))
+              with zipfile.ZipFile(out) as z:
+                  names = z.namelist()
+                  assert ".claude-plugin/plugin.json" in names, "plugin.json missing at zip root: " + out
+                  bad = [n for n in names if os.path.splitext(n)[1].lower() not in text_ext and os.path.basename(n) not in text_names]
+                  assert not bad, "non-text files must not ship: " + ", ".join(bad)
+                  assert not [n for n in names if n.split("/")[0] in ("hooks", "scripts")], "hooks and scripts must not ship"
+              print("built", out)
+          assert len(versions) == 1, "plugins must share one version: " + ", ".join(sorted(versions))
+          version = versions.pop()
           with open(os.environ.get("GITHUB_OUTPUT", os.devnull), "a") as g:
               g.write("version=" + version + "\n")
-          print("built", out, "version", version)
+          print("version", version)
           PY
       - name: Check the tag matches the plugin version
         if: github.ref_type == 'tag'
@@ -72,7 +76,7 @@ jobs:
         run: |
           tag="v$VERSION"
           if gh release view "$tag" >/dev/null 2>&1; then
-            gh release upload "$tag" "dist/$ASSET" --clobber
+            gh release upload "$tag" dist/*.plugin --clobber
           else
-            gh release create "$tag" "dist/$ASSET" --title "$NAME $tag" --generate-notes --target "$GITHUB_SHA"
+            gh release create "$tag" dist/*.plugin --title "$NAME $tag" --generate-notes --target "$GITHUB_SHA"
           fi
