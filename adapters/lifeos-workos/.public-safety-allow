@@ -1,8 +1,0 @@
-# False positives for scan_secrets.py. Only exact, intentional values, each tied to the file that holds it.
-# Format: <rule>:<path-glob>[:<value-substring>]
-# The plugin's public support address (it is the published contact, not personal data):
-email:.claude-plugin/plugin.json:support@syncwin.com
-email:PUBLIC-SAFETY.md:support@syncwin.com
-email:CHANGELOG.md:support@syncwin.com
-email:README.md:support@syncwin.com
-email:.public-safety-allow:support@syncwin.com

@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: lifeos-workos-sprint
+input_match: lifeos-work-sprint
 min: 1
 ---
 
-The lifeos-workos-sprint skill loads.
+The lifeos-work-sprint skill loads.

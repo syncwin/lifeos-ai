@@ -1,0 +1,8 @@
+{
+  "comment": "The LifeOS app's module registry. Each module with its own plugin maps to adapters/lifeos-<id>; core modules live in the core plugin (adapters/claude) as skills lifeos-<id>. CI (dev/scripts/check_module_registry.py) fails when the plugins in the repo differ from this list.",
+  "core_plugin": "lifeos",
+  "core_folder": "claude",
+  "plugin_modules": ["work", "device", "entity", "self"],
+  "core_modules": ["feed", "knowledge", "money"],
+  "parked_by_default": ["knowledge", "money"]
+}

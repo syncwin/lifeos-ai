@@ -1,0 +1,40 @@
+{
+  "skill_name": "lifeos-work-results",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-work-results",
+      "prompt": "Did that change work? Check the 28 day reading",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-results (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-work-results",
+      "prompt": "Capture a baseline before the page goes live",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-results (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-work-results",
+      "prompt": "Run the performance benchmark in my code",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-work-results; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-work-results",
+      "prompt": "Why did my organic traffic drop last month?",
+      "should_trigger": true,
+      "expected_output": "Checks the export window and filter, segments by page and query before naming a cause, separates concurrent events with their shares and never merges them into one cause."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-work-results",
+      "prompt": "Did the change I shipped three weeks ago work?",
+      "should_trigger": true,
+      "expected_output": "Finds the baseline or returns Unmeasurable, applies the 28 day gate (Too Early at best) and attributes movement only with a stated mechanism."
+    }
+  ]
+}

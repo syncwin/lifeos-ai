@@ -1,0 +1,26 @@
+---
+name: lifeos-device-files
+description: "Finds and organises files for LifeOS Device. Use when the user says \"find my file\", \"where is that file\", \"clean up this folder\", \"organise my downloads\", \"where do outputs go\", or \"move these files\". Searches first; moves need a risk check."
+license: MIT
+---
+
+# Device Files
+Needs: LifeOS MCP for folder rules.
+For device files, the core `lifeos` plugin is required: if its MCP tools are missing, say so and stop.
+Start: run the `lifeos` router first if it has not run.
+
+1. Where things belong: `search_context("file locations and rules")`.
+2. Search first and report paths. Moves go to a holding folder from those rules, never straight to deletion.
+3. Project file organizing (quick check versus full audit, one decision per file, never rename a tracker, file registry): `${CLAUDE_PLUGIN_ROOT}/references/core-rules.md`, File organizing.
+4. Show the proposed move list inside a `${CLAUDE_PLUGIN_ROOT}/references/risk-check.md` block; apply only on its exact reply, one batch per approval.
+
+## Done check
+Graded by the `lifeos-verify` agent plus the common Done check lines.
+- Search results list real paths; nothing moved or deleted without a filled risk-check block and its exact reply.
+- Every move went to the holding folder from the file rules, in one approved batch.
+
+## Handoff
+Delivered: Paths found, or an approved and applied move list with the holding-folder location.
+Next: record the change -> `lifeos-work-log`.
+
+Scratchpad: end per `${CLAUDE_PLUGIN_ROOT}/references/scratchpad.md`.

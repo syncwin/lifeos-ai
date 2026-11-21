@@ -5,38 +5,38 @@
       "id": 1,
       "skill": "lifeos",
       "prompt": "What should I focus on today?",
-      "expected_output": "Routes to lifeos, checks the EntityOS connection, reads priorities with search_context, asks for missing priorities once and does not invent any.",
+      "expected_output": "Routes to lifeos, checks the LifeOS connection, reads priorities with search_context, asks for missing priorities once and does not invent any.",
       "should_trigger": true
     },
     {
       "id": 2,
       "skill": "lifeos",
       "prompt": "Plan my week for work",
-      "expected_output": "Routes via lifeos to lifeos-workos then lifeos-workos-sprint: asks priorities first, reads capacity from EntityOS, builds one plan sized by outcome and waits for a yes.",
+      "expected_output": "Routes via lifeos to lifeos-work then lifeos-work-sprint: asks priorities first, reads capacity from LifeOS entity data, builds one plan sized by outcome and waits for a yes.",
       "should_trigger": true,
-      "expected_skill": "lifeos-workos-sprint"
+      "expected_skill": "lifeos-work-sprint"
     },
     {
       "id": 3,
       "skill": "lifeos",
       "prompt": "Remind me to renew my passport next month",
-      "expected_output": "Routes to lifeos-selfos then lifeos-selfos-reminders: parses what and when, shows the reminder and waits for a yes before creating it.",
+      "expected_output": "Routes to lifeos-self then lifeos-self-reminders: parses what and when, shows the reminder and waits for a yes before creating it.",
       "should_trigger": true,
-      "expected_skill": "lifeos-selfos-reminders"
+      "expected_skill": "lifeos-self-reminders"
     },
     {
       "id": 4,
       "skill": "lifeos",
       "prompt": "Is my PC backup healthy?",
-      "expected_output": "Routes to lifeos-deviceos then lifeos-deviceos-backup: reads the backup policy from EntityOS, stays read-only and reports evidence or UNKNOWN.",
+      "expected_output": "Routes to lifeos-device then lifeos-device-backup: reads the backup policy from LifeOS entity data, stays read-only and reports evidence or UNKNOWN.",
       "should_trigger": true,
-      "expected_skill": "lifeos-deviceos-backup"
+      "expected_skill": "lifeos-device-backup"
     },
     {
       "id": 5,
       "skill": "lifeos",
       "prompt": "Show me my daily feed",
-      "expected_output": "Routes to lifeos-feed: reads priorities and approved sources from EntityOS and returns at most ten actionable cards.",
+      "expected_output": "Routes to lifeos-feed: reads priorities and approved sources from LifeOS entity data and returns at most ten actionable cards.",
       "should_trigger": true,
       "expected_skill": "lifeos-feed"
     },
@@ -44,39 +44,39 @@
       "id": 6,
       "skill": "lifeos",
       "prompt": "Log what I did today and plan tomorrow",
-      "expected_output": "Routes via lifeos to lifeos-workos-log and lifeos-workos-report: logs with evidence and builds the end-of-day report from the log.",
+      "expected_output": "Routes via lifeos to lifeos-work-log and lifeos-work-report: logs with evidence and builds the end-of-day report from the log.",
       "should_trigger": true,
-      "expected_skill": "lifeos-workos-log"
+      "expected_skill": "lifeos-work-log"
     },
     {
       "id": 7,
       "skill": "lifeos",
       "prompt": "Log this receipt as an expense",
-      "expected_output": "Routes to lifeos-moneyos: extracts fields, shows them and waits for a yes; never moves money.",
+      "expected_output": "Routes to lifeos-money: extracts fields, shows them and waits for a yes; never moves money.",
       "should_trigger": true,
-      "expected_skill": "lifeos-moneyos"
+      "expected_skill": "lifeos-money"
     },
     {
       "id": 8,
       "skill": "lifeos",
       "prompt": "Save this link and tell me what I saved about my app project before",
-      "expected_output": "Routes to lifeos-knowledgeos: captures the link with tags and searches saved items with sources.",
+      "expected_output": "Routes to lifeos-knowledge: captures the link with tags and searches saved items with sources.",
       "should_trigger": true,
-      "expected_skill": "lifeos-knowledgeos"
+      "expected_skill": "lifeos-knowledge"
     },
     {
       "id": 9,
       "skill": "lifeos",
       "prompt": "A manager sent me a new request, add it to my plan",
-      "expected_output": "Routes via lifeos to lifeos-workos-intake: saves the text verbatim first, maps it to existing tasks and lists decisions needed.",
+      "expected_output": "Routes via lifeos to lifeos-work-intake: saves the text verbatim first, maps it to existing tasks and lists decisions needed.",
       "should_trigger": true,
-      "expected_skill": "lifeos-workos-intake"
+      "expected_skill": "lifeos-work-intake"
     },
     {
       "id": 10,
       "skill": "lifeos",
       "prompt": "Edit the lifeos skill so it always uses British English",
-      "expected_output": "Refuses to edit its own instructions in the session; offers a one or two sentence feedback note and points to voice in EntityOS.",
+      "expected_output": "Refuses to edit its own instructions in the session; offers a one or two sentence feedback note and points to voice in LifeOS entity data.",
       "should_trigger": true
     },
     {
@@ -104,9 +104,9 @@
       "id": 14,
       "skill": "lifeos",
       "prompt": "Build a content brief for this article",
-      "expected_output": "Routes via lifeos to lifeos-workos, which hands off to content-structure-strategy with brand context from EntityOS, or names the plugin if it is not installed.",
+      "expected_output": "Routes via lifeos to lifeos-work, which hands off to content-structure-strategy with brand context from LifeOS entity data, or names the plugin if it is not installed.",
       "should_trigger": true,
-      "expected_skill": "lifeos-workos"
+      "expected_skill": "lifeos-work"
     },
     {
       "id": 15,
@@ -114,7 +114,7 @@
       "prompt": "Plan my sprint without loading my tasks",
       "expected_output": "Loads the LifeOS task store first and stops and says so if it cannot, instead of planning from memory.",
       "should_trigger": true,
-      "expected_skill": "lifeos-workos-sprint"
+      "expected_skill": "lifeos-work-sprint"
     }
   ]
 }

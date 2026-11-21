@@ -1,8 +1,8 @@
 {
   "name": "lifeos",
   "displayName": "LifeOS",
-  "version": "0.5.0",
-  "description": "LifeOS core: the /lifeos router, the EntityOS MCP connection, shared rules, a verify agent and guard recipes. Module plugins (SelfOS, WorkOS, DeviceOS, KnowledgeOS, MoneyOS, EntityOS, Feed) add the skills; every owner fact comes from EntityOS.",
+  "version": "0.6.0",
+  "description": "LifeOS core: the /lifeos router, the one LifeOS MCP connection, shared rules, a verify agent, guard recipes and the feed, knowledge and money skills (knowledge and money off by default). Module plugins (work, device, entity, self) add the rest; every owner fact comes from your own LifeOS.",
   "author": {
     "name": "@wasimness",
     "company": "SyncWin",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "keywords": [
     "lifeos",
-    "entityos",
+    "entity",
     "productivity",
     "tasks",
     "workflow",
@@ -25,21 +25,21 @@
   "privacyPolicyUrl": "https://syncwin.com/privacy-policy/",
   "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
   "userConfig": {
-    "entityos_url": {
+    "lifeos_url": {
       "type": "string",
-      "title": "EntityOS MCP URL",
-      "description": "URL of your own EntityOS MCP endpoint."
+      "title": "LifeOS MCP URL",
+      "description": "URL of your own LifeOS MCP endpoint."
     },
-    "entityos_token": {
+    "lifeos_token": {
       "type": "string",
-      "title": "EntityOS access token",
-      "description": "Token for your EntityOS MCP endpoint. Stored in secure storage.",
+      "title": "LifeOS access token",
+      "description": "Token for your LifeOS MCP endpoint. Stored in secure storage.",
       "sensitive": true
     }
   },
   "metadata": {
     "displayName": "LifeOS",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

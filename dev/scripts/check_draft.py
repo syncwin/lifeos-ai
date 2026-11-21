@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic draft checker for workos-writing, built from references/patterns.md.
+"""Deterministic draft checker for lifeos-work-writing, built from references/patterns.md.
 
 Usage: python -I -X utf8 check_draft.py <draft.md|txt> [--ban "term,term"] [--patterns <patterns.md>]
 Prints one line per check: PASS, WARN, FAIL or SKIP, with line numbers. Exit 1 if any FAIL.

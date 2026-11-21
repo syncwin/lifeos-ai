@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: lifeos-workos-intake
+input_match: lifeos-work-intake
 min: 1
 ---
 
-The lifeos-workos-intake skill loads.
+The lifeos-work-intake skill loads.

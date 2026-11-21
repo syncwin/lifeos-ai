@@ -19,7 +19,7 @@ def run(rows, sid=None, extra=""):
         return r.returncode, r.stdout
 
 
-LIFE = tu("Skill", {"skill": "lifeos:workos-log"})
+LIFE = tu("Skill", {"skill": "lifeos:lifeos-work-log"})
 EDIT = tu("Write", {"file_path": "x"})
 MEM = "mcp__memory__save_progress"
 

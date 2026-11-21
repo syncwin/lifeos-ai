@@ -4,7 +4,7 @@ Applies before every Bash command that runs `gh` or `git push`, and every GitHub
 
 ## 1. Get the allowlist
 
-Run `search_context("owned repos and resources")` in EntityOS. The answer is a list of `owner/repo` patterns, where `*` matches any characters (for example `owner/*`). Compare case-insensitively. If the user keeps a `scope.json` (`{"repos": ["owner/repo"]}`) in a folder they name, read that too. A list you cannot read or understand counts as set but unusable: see section 4.
+Run `search_context("owned repos and resources")` in LifeOS entity data. The answer is a list of `owner/repo` patterns, where `*` matches any characters (for example `owner/*`). Compare case-insensitively. If the user keeps a `scope.json` (`{"repos": ["owner/repo"]}`) in a folder they name, read that too. A list you cannot read or understand counts as set but unusable: see section 4.
 
 ## 2. Work out the targets of the call
 

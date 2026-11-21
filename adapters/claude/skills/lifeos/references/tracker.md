@@ -11,4 +11,4 @@ Tables: `sprints`, `plan_items`, `log_entries`, `decisions`, `questions`, `flags
 | day_reports | id, date, kind (start or end), audience, body |
 | readings | id, plan_item_id, metric, value, taken_at (baseline flagged) |
 
-Write order: log_entries, then plan_items status, then day_reports. Quality gate as column checks: no empty evidence, every plan item has an outcome, at most two in_progress. Read through named views (`v_open_items`, `v_day`, `v_week`). A user-owned store may rename columns; map once and keep the mapping in EntityOS.
+Write order: log_entries, then plan_items status, then day_reports. Quality gate as column checks: no empty evidence, every plan item has an outcome, at most two in_progress. Read through named views (`v_open_items`, `v_day`, `v_week`). A user-owned store may rename columns; map once and keep the mapping in LifeOS entity data.

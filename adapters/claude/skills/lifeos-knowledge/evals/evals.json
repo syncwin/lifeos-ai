@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-knowledge",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-knowledge",
+      "prompt": "Save this link and tell me what I saved about my app project before",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-knowledge (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-knowledge",
+      "prompt": "Find my notes on kitchen renovation",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-knowledge (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-knowledge",
+      "prompt": "Explain how state management works in a mobile app framework",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-knowledge; answers normally or points to another tool."
+    }
+  ]
+}

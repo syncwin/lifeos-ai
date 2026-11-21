@@ -1,0 +1,40 @@
+{
+  "skill_name": "lifeos-work-draft",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-work-draft",
+      "prompt": "Draft this article from the brief",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-draft (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-work-draft",
+      "prompt": "Write the draft for this service page",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-draft (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-work-draft",
+      "prompt": "Draft the page body using the fact table",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-draft (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-work-draft",
+      "prompt": "Summarise this meeting transcript",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-work-draft; answers normally or points to another tool."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-work-draft",
+      "prompt": "Draft this article from the brief, using what you already know about my business",
+      "should_trigger": true,
+      "expected_output": "Reads voice and required wording from LifeOS entity data, follows the brief's structure, flags unsourced claims, invents no business fact and does not publish."
+    }
+  ]
+}

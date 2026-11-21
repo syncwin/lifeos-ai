@@ -1,7 +1,7 @@
 {
   "core": "adapters/claude/skills/lifeos/references",
   "plugins": {
-    "lifeos-deviceos": [
+    "lifeos-device": [
       "core-rules.md",
       "entityos-offline.md",
       "entityos-write-confirm.md",
@@ -10,7 +10,7 @@
       "scratchpad.md",
       "tracker.md"
     ],
-    "lifeos-entityos": [
+    "lifeos-entity": [
       "core-rules.md",
       "entityos-offline.md",
       "entityos-write-confirm.md",
@@ -20,10 +20,7 @@
       "screen-text.md",
       "tracker.md"
     ],
-    "lifeos-feed": [
-      "scratchpad.md"
-    ],
-    "lifeos-knowledgeos": [
+    "lifeos-self": [
       "entityos-offline.md",
       "entityos-write-confirm.md",
       "risk-check.md",
@@ -31,23 +28,7 @@
       "scratchpad.md",
       "tracker.md"
     ],
-    "lifeos-moneyos": [
-      "entityos-offline.md",
-      "entityos-write-confirm.md",
-      "risk-check.md",
-      "rules.md",
-      "scratchpad.md",
-      "tracker.md"
-    ],
-    "lifeos-selfos": [
-      "entityos-offline.md",
-      "entityos-write-confirm.md",
-      "risk-check.md",
-      "rules.md",
-      "scratchpad.md",
-      "tracker.md"
-    ],
-    "lifeos-workos": [
+    "lifeos-work": [
       "core-rules.md",
       "entityos-offline.md",
       "entityos-write-confirm.md",

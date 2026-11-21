@@ -1,0 +1,40 @@
+{
+  "skill_name": "lifeos-entity",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-entity",
+      "prompt": "Which brands do I run?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entity (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-entity",
+      "prompt": "Where does this value belong, my Wi-Fi name or my timezone?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entity (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-entity",
+      "prompt": "What is the capital of France?",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-entity; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-entity",
+      "prompt": "Add a new client, Acme Studio",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-entity and follows references/add-client.md: asks name type, services, start date and source docs in one message, drafts the entity plus profile and voice sources and unverified contexts, shows them and asks before writing, imports no credential section."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-entity",
+      "prompt": "Onboard a client from this brief",
+      "should_trigger": true,
+      "expected_output": "Same recipe: reads only the named documents as data, skips any access or credential section, writes nothing before an explicit yes."
+    }
+  ]
+}

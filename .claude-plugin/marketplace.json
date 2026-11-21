@@ -12,7 +12,7 @@
       "name": "lifeos",
       "displayName": "LifeOS",
       "source": "./adapters/claude",
-      "description": "Core: the /lifeos router, EntityOS connection, shared rules, verify agent and guard recipes. Add the module plugins for the skills. Owner facts come from your own EntityOS.",
+      "description": "Core: the /lifeos router, the one LifeOS MCP connection, shared rules, verify agent, plus the feed, knowledge and money skills (knowledge and money off by default). Add the work, device, entity and self plugins for their skills. Owner facts come from your own LifeOS.",
       "author": {
         "name": "@wasimness",
         "email": "support@syncwin.com",
@@ -23,16 +23,16 @@
       "category": "productivity",
       "keywords": [
         "lifeos",
-        "entityos",
         "router",
+        "feed",
         "productivity"
       ],
-      "version": "0.5.0"
+      "version": "0.6.0"
     },
     {
-      "name": "lifeos-selfos",
-      "displayName": "LifeOS SelfOS",
-      "source": "./adapters/lifeos-selfos",
+      "name": "lifeos-self",
+      "displayName": "LifeOS Self",
+      "source": "./adapters/lifeos-self",
       "description": "Personal tasks, reminders and routines. Needs the core lifeos plugin.",
       "author": {
         "name": "@wasimness",
@@ -44,15 +44,15 @@
       "category": "productivity",
       "keywords": [
         "lifeos",
-        "selfos",
+        "self",
         "tasks"
       ],
-      "version": "0.5.0"
+      "version": "0.6.0"
     },
     {
-      "name": "lifeos-workos",
-      "displayName": "LifeOS WorkOS",
-      "source": "./adapters/lifeos-workos",
+      "name": "lifeos-work",
+      "displayName": "LifeOS Work",
+      "source": "./adapters/lifeos-work",
       "description": "Work planning, logging, reports, results, requests, content planning, writing checks and the content chain (research, brief, draft, review). Needs the core lifeos plugin.",
       "author": {
         "name": "@wasimness",
@@ -64,15 +64,15 @@
       "category": "productivity",
       "keywords": [
         "lifeos",
-        "workos",
+        "work",
         "planning"
       ],
-      "version": "0.5.0"
+      "version": "0.6.0"
     },
     {
-      "name": "lifeos-deviceos",
-      "displayName": "LifeOS DeviceOS",
-      "source": "./adapters/lifeos-deviceos",
+      "name": "lifeos-device",
+      "displayName": "LifeOS Device",
+      "source": "./adapters/lifeos-device",
       "description": "PC and phone health, backups, files and automation. Needs the core lifeos plugin.",
       "author": {
         "name": "@wasimness",
@@ -84,55 +84,15 @@
       "category": "productivity",
       "keywords": [
         "lifeos",
-        "deviceos",
+        "device",
         "backup"
       ],
-      "version": "0.5.0"
+      "version": "0.6.0"
     },
     {
-      "name": "lifeos-knowledgeos",
-      "displayName": "LifeOS KnowledgeOS",
-      "source": "./adapters/lifeos-knowledgeos",
-      "description": "Saves, notes and learning. Needs the core lifeos plugin.",
-      "author": {
-        "name": "@wasimness",
-        "email": "support@syncwin.com",
-        "url": "https://syncwin.com"
-      },
-      "homepage": "https://syncwin.com",
-      "license": "MIT",
-      "category": "productivity",
-      "keywords": [
-        "lifeos",
-        "knowledgeos",
-        "notes"
-      ],
-      "version": "0.5.0"
-    },
-    {
-      "name": "lifeos-moneyos",
-      "displayName": "LifeOS MoneyOS",
-      "source": "./adapters/lifeos-moneyos",
-      "description": "Money records: expenses, receipts, bills and subscriptions (records and reports only). Needs the core lifeos plugin.",
-      "author": {
-        "name": "@wasimness",
-        "email": "support@syncwin.com",
-        "url": "https://syncwin.com"
-      },
-      "homepage": "https://syncwin.com",
-      "license": "MIT",
-      "category": "productivity",
-      "keywords": [
-        "lifeos",
-        "moneyos",
-        "expenses"
-      ],
-      "version": "0.5.0"
-    },
-    {
-      "name": "lifeos-entityos",
-      "displayName": "LifeOS EntityOS",
-      "source": "./adapters/lifeos-entityos",
+      "name": "lifeos-entity",
+      "displayName": "LifeOS Entity",
+      "source": "./adapters/lifeos-entity",
       "description": "Facts about the owner, brands, people and sources. Needs the core lifeos plugin.",
       "author": {
         "name": "@wasimness",
@@ -144,30 +104,10 @@
       "category": "productivity",
       "keywords": [
         "lifeos",
-        "entityos",
+        "entity",
         "facts"
       ],
-      "version": "0.5.0"
-    },
-    {
-      "name": "lifeos-feed",
-      "displayName": "LifeOS Feed",
-      "source": "./adapters/lifeos-feed",
-      "description": "The daily and on-demand feed of ranked, actionable cards. Needs the core lifeos plugin.",
-      "author": {
-        "name": "@wasimness",
-        "email": "support@syncwin.com",
-        "url": "https://syncwin.com"
-      },
-      "homepage": "https://syncwin.com",
-      "license": "MIT",
-      "category": "productivity",
-      "keywords": [
-        "lifeos",
-        "feed",
-        "daily"
-      ],
-      "version": "0.5.0"
+      "version": "0.6.0"
     }
   ]
 }

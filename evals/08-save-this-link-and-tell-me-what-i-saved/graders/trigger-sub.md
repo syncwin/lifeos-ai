@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: lifeos-knowledgeos
+input_match: lifeos-knowledge
 min: 1
 ---
 
-The lifeos-knowledgeos skill loads.
+The lifeos-knowledge skill loads.

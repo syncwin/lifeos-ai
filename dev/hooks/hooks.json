@@ -17,7 +17,7 @@
         ]
       },
       {
-        "matcher": "^mcp__.*entityos.*__([Ww]rite|[Uu]pdate|[Cc]reate|[Dd]elete|[Pp]ut|[Rr]emove|[Ii]nsert|[Uu]psert|[Pp]atch|[Mm]erge).*$",
+        "matcher": "^mcp__.*lifeos.*__([Ww]rite|[Uu]pdate|[Cc]reate|[Dd]elete|[Pp]ut|[Rr]emove|[Ii]nsert|[Uu]psert|[Pp]atch|[Mm]erge).*$",
         "hooks": [
           {
             "type": "command",
@@ -34,7 +34,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "WebFetch|WebSearch|mcp__.*entityos.*",
+        "matcher": "WebFetch|WebSearch|mcp__.*lifeos.*",
         "hooks": [
           {
             "type": "command",

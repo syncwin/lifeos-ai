@@ -1,7 +1,7 @@
-Sample EntityOS result for "{{input.query}}" (eval stand-in, fictional data, no network).
+Sample LifeOS entity data result for "{{input.query}}" (eval stand-in, fictional data, no network).
 
 - Owner: Sample Owner. Timezone: Europe/London. Language variant: British English. Voice: plain, short sentences.
-- Modules enabled: selfos, workos, deviceos, moneyos, knowledgeos.
+- Modules enabled: self, work, device, money, knowledge.
 - Priorities: 1) ship the Sample Brand website update, 2) clear the inbox of client requests, 3) renew the passport.
 - Approved sources: sample-news.example, sample-blog.example.
 - Feed preferences: card limit 10.

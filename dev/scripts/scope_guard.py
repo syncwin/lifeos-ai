@@ -1,6 +1,6 @@
 """PreToolUse scope guard: code-host calls must target allowlisted repos.
 
-Allowlist file (never shipped, filled from EntityOS "owned repos and resources"):
+Allowlist file (never shipped, filled from LifeOS entity data "owned repos and resources"):
   first argument (hooks.json passes ${CLAUDE_PLUGIN_DATA}/scope.json) -> {"repos": ["owner/repo", "owner/*"]}
 No file or empty list: allow, except `git push` to main/master asks first. Out of scope: exit 2 with one line.
 This is a guard, so it fails closed: an allowlist file that exists but cannot be read, or any error while checking a call once an allowlist is set, exits 2.
