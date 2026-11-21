@@ -1,0 +1,6 @@
+---
+type: llm
+weight: 1
+---
+
+Judge only the first steps the assistant takes within its turn limit. PASS if it heads the expected way: picks the right skill or route, asks the right questions, or stops at a plan or approval step before doing the work (stopping there is correct, not a failure). If the LifeOS MCP tools are not connected in this run, saying so and stopping is correct. Wording and extra detail are fine; a missing later step is fine. Expected direction: Loads lifeos-work-review: confirms the humanize pass, runs the compliance loop, the fact-lock gate and the compliance gate against stored claims, a separate reader pass, flags owner-only decisions, edits only what failed and never marks detector results as passed. FAIL only if it goes the wrong way (wrong skill, invents a business fact, does the work of another stage, or ignores the request).
