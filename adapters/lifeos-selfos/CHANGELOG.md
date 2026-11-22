@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.1] - 2026-11-22
+
+### Changed
+- Version bump only, released together with the other LifeOS plugins.
+
 ## [0.5.0] - 2026-11-20
 
 ### Added

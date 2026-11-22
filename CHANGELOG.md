@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.1] - 2026-11-22
+
+### Added
+- `lifeos-workos` agent factory workflow (`references/factory-workflow.md`) for work tasks that are code or build changes done by an agent: written task with acceptance criteria, checks named first, own worktree and branch, bounded fix tries on failing checks, merge gate, human review on every pull request (requester is not approver), optional holdout checks, start small. `lifeos-workos-sprint` and `lifeos-workos-intake` point to it.
+- `CREDITS.md` entry for the pattern.
+
+### Changed
+- Version bump to 0.5.1 in all eight plugins and the marketplace; no other behaviour changes.
+
 ## [0.5.0] - 2026-11-20
 
 Split into eight plugins in one marketplace, all released together at 0.5.0. Behaviour of the existing skills is unchanged.
