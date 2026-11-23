@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Removed
+- `dev/scripts/sync_shared.py`: it read the `shared/` folder, which no longer exists; `dev/scripts/sync_plugin_refs.py` replaced it. Maintainer tooling only, nothing shipped changes.
+
 ## [0.6.0] - 2026-11-21
 
 Breaking: five plugins instead of eight, and every module slug is renamed to the pattern `lifeos-<module>`. All plugins are released together at 0.6.0.
