@@ -1,7 +1,7 @@
 {
   "name": "lifeos-moneyos",
   "displayName": "LifeOS MoneyOS",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "LifeOS MoneyOS: money records: expenses, receipts, bills and subscriptions (records and reports only). Needs the core lifeos plugin for the MCP connection and shared rules.",
   "author": {
     "name": "@wasimness",
@@ -25,7 +25,7 @@
   "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
   "metadata": {
     "displayName": "LifeOS MoneyOS",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

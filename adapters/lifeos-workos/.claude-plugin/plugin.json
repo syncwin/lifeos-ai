@@ -1,7 +1,7 @@
 {
   "name": "lifeos-workos",
   "displayName": "LifeOS WorkOS",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "LifeOS WorkOS: work planning, logging, reports, results, requests, content planning, writing checks and the content chain (research, brief, draft, review). Needs the core lifeos plugin for the MCP connection and shared rules.",
   "author": {
     "name": "@wasimness",
@@ -26,7 +26,7 @@
   "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
   "metadata": {
     "displayName": "LifeOS WorkOS",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

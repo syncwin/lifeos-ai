@@ -12,7 +12,7 @@ Start: run the `lifeos` router first if it has not run.
 1. Save the requester's text verbatim first. No paraphrase.
 2. Read it back; flag truncated text and missing attachments.
 3. Map each item to existing tasks: duplicate, frozen, or new. Ownership and frozen rules: `search_context("entity ownership rules")`.
-4. Register new items; log one row.
+4. Register new items; log one row. A new item that is a code or build change for an agent gets a problem and acceptance criteria before it is planned: `${CLAUDE_PLUGIN_ROOT}/references/factory-workflow.md`.
 5. Output the mapped list with the decisions the owner must make. A reply or status sent back to the requester is outbound: `${CLAUDE_PLUGIN_ROOT}/references/risk-check.md`.
 
 ## Done check
