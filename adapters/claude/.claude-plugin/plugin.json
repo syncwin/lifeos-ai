@@ -1,7 +1,7 @@
 {
   "name": "lifeos",
   "displayName": "LifeOS",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "LifeOS core: the /lifeos router, the EntityOS MCP connection, shared rules, a verify agent and guard recipes. Module plugins (SelfOS, WorkOS, DeviceOS, KnowledgeOS, MoneyOS, EntityOS, Feed) add the skills; every owner fact comes from EntityOS.",
   "author": {
     "name": "@wasimness",
@@ -39,7 +39,7 @@
   },
   "metadata": {
     "displayName": "LifeOS",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "releaseStage": "alpha",
     "author": "@wasimness",
     "company": "SyncWin",

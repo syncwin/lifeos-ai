@@ -27,7 +27,7 @@
         "router",
         "productivity"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-selfos",
@@ -47,7 +47,7 @@
         "selfos",
         "tasks"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-workos",
@@ -67,7 +67,7 @@
         "workos",
         "planning"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-deviceos",
@@ -87,7 +87,7 @@
         "deviceos",
         "backup"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-knowledgeos",
@@ -107,7 +107,7 @@
         "knowledgeos",
         "notes"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-moneyos",
@@ -127,7 +127,7 @@
         "moneyos",
         "expenses"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-entityos",
@@ -147,7 +147,7 @@
         "entityos",
         "facts"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     },
     {
       "name": "lifeos-feed",
@@ -167,7 +167,7 @@
         "feed",
         "daily"
       ],
-      "version": "0.5.1"
+      "version": "0.5.2"
     }
   ]
 }

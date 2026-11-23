@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.2: 2026-11-23
+
+**Changed**
+- lifeos-verify agent: removed the undocumented `license` frontmatter key (directory gate D020).
+
 ## [0.5.1] - 2026-11-22
 
 ### Changed
