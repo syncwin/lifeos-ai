@@ -8,6 +8,7 @@ Breaking: five plugins instead of eight, and every module slug is renamed to the
 - Plugins: the core `lifeos` (now also holds the `lifeos-feed`, `lifeos-knowledge` and `lifeos-money` skills; knowledge and money are parked, off by default per the module switch) plus `lifeos-work`, `lifeos-device`, `lifeos-entity` and `lifeos-self`. The plugins `lifeos-feed`, `lifeos-knowledgeos` and `lifeos-moneyos` are gone.
 - One LifeOS MCP connection only. The separate `entityos` MCP server and its options `entityos_url` and `entityos_token` are removed; the core now has the server `lifeos` with the options `lifeos_url` and `lifeos_token`. Entity data is part of LifeOS (the LifeOS entity tools, `lifeos_entity_*`); the shared rules and skills say "LifeOS entity data" instead of EntityOS. The shared-reference file names `entityos-offline.md` and `entityos-write-confirm.md` are unchanged.
 - Router tables (core and module copies), router and skill evals, prompt, README, CREDITS, PUBLIC-SAFETY and `dev/plugin-refs.json` use the new slugs. Routing triggers `workos`, `selfos`, `deviceos` and `moneyos` became `work module`, `self module`, `device module` and `money module`.
+- The 0.5.1 agent factory workflow moves with its module to `adapters/lifeos-work/references/factory-workflow.md` and is read by `lifeos-work-sprint` and `lifeos-work-intake`.
 
 ### Added
 - `dev/module-registry.json` (the app's module list) and `dev/scripts/check_module_registry.py`, run in CI: the plugin folders and marketplace entries must match the registry.
@@ -25,6 +26,20 @@ Breaking: five plugins instead of eight, and every module slug is renamed to the
 | MCP server `entityos`, options `entityos_url`, `entityos_token` | MCP server `lifeos`, options `lifeos_url`, `lifeos_token` |
 
 To migrate: uninstall the old module plugins, install the new ones, and set `lifeos_url` and `lifeos_token` in the core plugin options.
+
+## 0.5.2: 2026-11-23
+
+**Changed**
+- lifeos-verify agent: removed the undocumented `license` frontmatter key (directory gate D020).
+
+## [0.5.1] - 2026-11-22
+
+### Added
+- `lifeos-workos` agent factory workflow (`references/factory-workflow.md`) for work tasks that are code or build changes done by an agent: written task with acceptance criteria, checks named first, own worktree and branch, bounded fix tries on failing checks, merge gate, human review on every pull request (requester is not approver), optional holdout checks, start small. `lifeos-workos-sprint` and `lifeos-workos-intake` point to it.
+- `CREDITS.md` entry for the pattern.
+
+### Changed
+- Version bump to 0.5.1 in all eight plugins and the marketplace; no other behaviour changes.
 
 ## [0.5.0] - 2026-11-20
 

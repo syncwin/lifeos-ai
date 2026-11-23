@@ -4,6 +4,16 @@
 
 Breaking: the plugin `lifeos-entityos` is renamed `lifeos-entity`, and its skills are renamed to match (`lifeos-entityos` is now `lifeos-entity`). Uninstall `lifeos-entityos` and install `lifeos-entity`. Behaviour is unchanged. The plugin still needs the core `lifeos` plugin, which now holds the one LifeOS MCP connection (entity data is part of it).
 
+## 0.5.2: 2026-11-23
+
+**Changed**
+- lifeos-verify agent: removed the undocumented `license` frontmatter key (directory gate D020).
+
+## [0.5.1] - 2026-11-22
+
+### Changed
+- Version bump only, released together with the other LifeOS plugins.
+
 ## [0.5.0] - 2026-11-20
 
 ### Added

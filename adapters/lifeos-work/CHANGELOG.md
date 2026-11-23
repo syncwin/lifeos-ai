@@ -4,6 +4,16 @@
 
 Breaking: the plugin `lifeos-workos` is renamed `lifeos-work`, and its skills are renamed to match (`lifeos-workos` is now `lifeos-work`, `lifeos-workos-<stage>` is now `lifeos-work-<stage>`). Uninstall `lifeos-workos` and install `lifeos-work`. Behaviour is unchanged. The plugin still needs the core `lifeos` plugin, which now holds the one LifeOS MCP connection (entity data is part of it).
 
+## 0.5.2: 2026-11-23
+
+**Changed**
+- lifeos-verify agent: removed the undocumented `license` frontmatter key (directory gate D020).
+
+## [0.5.1] - 2026-11-22
+
+### Added
+- `references/factory-workflow.md`: method for code or build tasks done by an agent; sprint and intake skills point to it.
+
 ## [0.5.0] - 2026-11-20
 
 ### Added

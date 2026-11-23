@@ -12,9 +12,10 @@ Start: run the `lifeos` router first if it has not run.
 1. Ask priorities first. Read `search_context("priorities")`, `search_context("working hours, capacity, owners per task type")`.
 2. Gather open tasks from every list, blocked items, the question queue. Method for sizing, sequencing, executing a task, the content boundary and day reports: `${CLAUDE_PLUGIN_ROOT}/references/execution-and-reporting.md`; tracker structure: `${CLAUDE_PLUGIN_ROOT}/references/workbook-and-tracker-spec.md`. Shared rules: `${CLAUDE_PLUGIN_ROOT}/references/core-rules.md`.
 3. Write one sprint row and plan items sized by outcome, not hours. Two tasks in progress at most. Estimates that carry over stay visibly marked.
-4. Stale upstream stages (intake, results) appear as proposed tasks, not as run work.
-5. List exclusions with the reason.
-6. Show the plan; save after a yes.
+4. A task that is a code or build change done by an agent is sized and run as a written task with named checks, a pull request and a person's review: `${CLAUDE_PLUGIN_ROOT}/references/factory-workflow.md`.
+5. Stale upstream stages (intake, results) appear as proposed tasks, not as run work.
+6. List exclusions with the reason.
+7. Show the plan; save after a yes.
 
 ## Done check
 Graded by the `lifeos-verify` agent plus the common Done check lines.
