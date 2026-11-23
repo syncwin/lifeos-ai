@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-self-tasks",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-self-tasks",
+      "prompt": "Add a task: book the dentist",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-self-tasks (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-self-tasks",
+      "prompt": "What is overdue?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-self-tasks (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-self-tasks",
+      "prompt": "Write a to-do list app in JavaScript",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-self-tasks; answers normally or points to another tool."
+    }
+  ]
+}

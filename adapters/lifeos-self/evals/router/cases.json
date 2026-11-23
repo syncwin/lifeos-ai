@@ -1,0 +1,45 @@
+{
+  "_note": "Router cases for this plugin: expected = the skill the routing table in the router skill must pick. Checked by route_check.py.",
+  "cases": [
+    {
+      "prompt": "remind me to renew my passport next month",
+      "expected": "lifeos-self-reminders"
+    },
+    {
+      "prompt": "snooze that reminder",
+      "expected": "lifeos-self-reminders"
+    },
+    {
+      "prompt": "start my evening wind-down",
+      "expected": "lifeos-self-routines"
+    },
+    {
+      "prompt": "add a step to my morning routine",
+      "expected": "lifeos-self-routines"
+    },
+    {
+      "prompt": "add a task to call the dentist",
+      "expected": "lifeos-self-tasks"
+    },
+    {
+      "prompt": "what is overdue",
+      "expected": "lifeos-self-tasks"
+    },
+    {
+      "prompt": "find my insurance document",
+      "expected": "lifeos-self"
+    },
+    {
+      "prompt": "open self module",
+      "expected": "lifeos-self"
+    },
+    {
+      "prompt": "help me get things sorted out",
+      "expected": "ask"
+    },
+    {
+      "prompt": "what should I do about this",
+      "expected": "ask"
+    }
+  ]
+}

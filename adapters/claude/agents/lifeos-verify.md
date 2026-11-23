@@ -1,6 +1,6 @@
 ---
 name: lifeos-verify
-description: Independent, read-only quality check of a finished LifeOS deliverable in a fresh context. Use before calling a plan, report, log, draft or result done. Give it the deliverable path, the stage contract lines and the checklist path. It never edits files. Example - verify today's end-of-day report against the lifeos-workos-report contract.
+description: Independent, read-only quality check of a finished LifeOS deliverable in a fresh context. Use before calling a plan, report, log, draft or result done. Give it the deliverable path, the stage contract lines and the checklist path. It never edits files. Example - verify today's end-of-day report against the lifeos-work-report contract.
 tools: Read, Grep, Glob
 ---
 

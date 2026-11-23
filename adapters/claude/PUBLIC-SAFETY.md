@@ -15,7 +15,7 @@ This repository is public. Only what is listed under "May be public" is publishe
 - Local absolute user paths; private notes, logs, memory or progress files
 
 ## Where private values live instead
-- Your EntityOS endpoint URL and access token are plugin options (`entityos_url`, `entityos_token`) you set locally under Configure options; the token is stored as a sensitive setting and never written to a file in this repository.
+- Your LifeOS MCP endpoint URL and access token are plugin options (`lifeos_url`, `lifeos_token`) you set locally under Configure options; the token is stored as a sensitive setting and never written to a file in this repository.
 
 ## Checks
 - `python dev/aiaddon-review/scripts/scan_secrets.py . --history` (working tree plus full git history, run with the aiaddon checker scripts) before every release

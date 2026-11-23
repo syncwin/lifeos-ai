@@ -1,0 +1,33 @@
+{
+  "skill_name": "lifeos-device-files",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-device-files",
+      "prompt": "Find my file named tax-2025.pdf",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-device-files (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-device-files",
+      "prompt": "Organise my downloads folder",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-device-files (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-device-files",
+      "prompt": "Create a new React component for a navbar",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-device-files; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-device-files",
+      "prompt": "Organize the project files for this brand",
+      "should_trigger": true,
+      "expected_output": "Does a quick check or full audit with one decision per file, never renames a tracker, shows moves in a risk-check block and moves to the holding folder only after the exact reply."
+    }
+  ]
+}

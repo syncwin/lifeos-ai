@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-money",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-money",
+      "prompt": "Log this receipt as an expense",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-money (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-money",
+      "prompt": "What bills are due this week?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-money (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-money",
+      "prompt": "Transfer 500 dollars to my savings account",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-money; answers normally or points to another tool."
+    }
+  ]
+}

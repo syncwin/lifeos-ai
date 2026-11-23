@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.6.0] - 2026-11-21
+
+Breaking: five plugins instead of eight, and every module slug is renamed to the pattern `lifeos-<module>`. All plugins are released together at 0.6.0.
+
+### Changed
+- Plugins: the core `lifeos` (now also holds the `lifeos-feed`, `lifeos-knowledge` and `lifeos-money` skills; knowledge and money are parked, off by default per the module switch) plus `lifeos-work`, `lifeos-device`, `lifeos-entity` and `lifeos-self`. The plugins `lifeos-feed`, `lifeos-knowledgeos` and `lifeos-moneyos` are gone.
+- One LifeOS MCP connection only. The separate `entityos` MCP server and its options `entityos_url` and `entityos_token` are removed; the core now has the server `lifeos` with the options `lifeos_url` and `lifeos_token`. Entity data is part of LifeOS (the LifeOS entity tools, `lifeos_entity_*`); the shared rules and skills say "LifeOS entity data" instead of EntityOS. The shared-reference file names `entityos-offline.md` and `entityos-write-confirm.md` are unchanged.
+- Router tables (core and module copies), router and skill evals, prompt, README, CREDITS, PUBLIC-SAFETY and `dev/plugin-refs.json` use the new slugs. Routing triggers `workos`, `selfos`, `deviceos` and `moneyos` became `work module`, `self module`, `device module` and `money module`.
+- The 0.5.1 agent factory workflow moves with its module to `adapters/lifeos-work/references/factory-workflow.md` and is read by `lifeos-work-sprint` and `lifeos-work-intake`.
+
+### Added
+- `dev/module-registry.json` (the app's module list) and `dev/scripts/check_module_registry.py`, run in CI: the plugin folders and marketplace entries must match the registry.
+
+### Migration (old to new)
+| Old | New |
+|---|---|
+| plugin `lifeos-workos` and skills `lifeos-workos`, `lifeos-workos-<stage>` | plugin `lifeos-work`, skills `lifeos-work`, `lifeos-work-<stage>` |
+| plugin `lifeos-deviceos` and skills `lifeos-deviceos`, `lifeos-deviceos-<stage>` | plugin `lifeos-device`, skills `lifeos-device`, `lifeos-device-<stage>` |
+| plugin `lifeos-selfos` and skills `lifeos-selfos`, `lifeos-selfos-<stage>` | plugin `lifeos-self`, skills `lifeos-self`, `lifeos-self-<stage>` |
+| plugin and skill `lifeos-entityos` | plugin and skill `lifeos-entity` |
+| plugin `lifeos-feed`, skill `lifeos-feed` | skill `lifeos-feed` in the core `lifeos` |
+| plugin and skill `lifeos-knowledgeos` | skill `lifeos-knowledge` in the core `lifeos` |
+| plugin and skill `lifeos-moneyos` | skill `lifeos-money` in the core `lifeos` |
+| MCP server `entityos`, options `entityos_url`, `entityos_token` | MCP server `lifeos`, options `lifeos_url`, `lifeos_token` |
+
+To migrate: uninstall the old module plugins, install the new ones, and set `lifeos_url` and `lifeos_token` in the core plugin options.
+
 ## 0.5.2: 2026-11-23
 
 **Changed**

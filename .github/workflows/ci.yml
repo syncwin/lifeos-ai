@@ -43,6 +43,10 @@ jobs:
           for t in dev/tests/test_*.py; do python "$t"; done
       - name: Plugin references in sync with the core
         run: python -I -X utf8 dev/scripts/sync_plugin_refs.py --check
+      - name: Plugin list matches the app's module registry
+        run: python -I -X utf8 dev/scripts/check_module_registry.py
+      - name: Core router routes every case across all plugins
+        run: python -I -X utf8 dev/scripts/check_module_routes.py
       - name: Validate every plugin for the directory (blocking)
         run: |
           for d in adapters/*/; do

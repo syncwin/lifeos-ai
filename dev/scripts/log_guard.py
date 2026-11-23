@@ -1,6 +1,6 @@
 """Stop log guard: if files changed after the last log row, ask once to log.
 
-Runs only in LifeOS sessions (a lifeos/entityos tool or a LifeOS skill was used in the transcript).
+Runs only in LifeOS sessions (a lifeos tool or a LifeOS skill was used in the transcript).
 Blocks at most once per session (marker file keyed by session_id in the temp dir).
 Log tools: first argument (regex; default log_entry / lifeos..log) plus mcp__memory__save_progress.
 If no log tool is visible in the transcript, warns once and does not block.
@@ -17,7 +17,7 @@ CHANGE_TOOLS = {"Write", "Edit", "MultiEdit", "NotebookEdit"}
 DEFAULT_LOG = r"log_?entr|lifeos.*log"
 MEMORY_LOG = r"^mcp__memory__save_progress$"
 LIFEOS_TOOL = re.compile(r"lifeos|entityos", re.I)
-LIFEOS_SKILL = re.compile(r"^(lifeos[:\-]|lifeos$|(workos|selfos|deviceos|moneyos)-)", re.I)
+LIFEOS_SKILL = re.compile(r"^(lifeos[:\-]|lifeos$|(work|self|device|money|knowledge|entity|feed)-)", re.I)
 
 
 def tool_uses(path):

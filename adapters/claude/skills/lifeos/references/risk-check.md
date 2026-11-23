@@ -24,5 +24,5 @@ One block per action. A new action, target or batch needs a new block. A yes cov
 | Outbound message: email, chat, invite, post, reminder that notifies someone | Yes | Show the exact text and recipients |
 | Reply or status sent back to a requester | Yes | Same as outbound message |
 | New scheduled task or automation | Yes | Show the plan; run nothing hidden |
-| Write to EntityOS (store or change an owner fact) | Yes | Always confirm first (`entityos-write-confirm.md`) |
+| Write to LifeOS entity data (store or change an owner fact) | Yes | Always confirm first (`entityos-write-confirm.md`) |
 | Read-only look, search, report | No | |

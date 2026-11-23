@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "entityos": {
+    "lifeos": {
       "type": "http",
-      "url": "${user_config.entityos_url}",
+      "url": "${user_config.lifeos_url}",
       "headers": {
-        "Authorization": "Bearer ${user_config.entityos_token}"
+        "Authorization": "Bearer ${user_config.lifeos_token}"
       }
     }
   }

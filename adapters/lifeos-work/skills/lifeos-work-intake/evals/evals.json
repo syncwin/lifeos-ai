@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-work-intake",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-work-intake",
+      "prompt": "A manager sent me a new request, add it to my plan",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-intake (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-work-intake",
+      "prompt": "Is this request a duplicate of something I already have?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-intake (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-work-intake",
+      "prompt": "Reply to this customer email for me",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-work-intake; answers normally or points to another tool."
+    }
+  ]
+}

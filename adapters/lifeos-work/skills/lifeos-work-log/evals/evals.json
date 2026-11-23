@@ -1,0 +1,33 @@
+{
+  "skill_name": "lifeos-work-log",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-work-log",
+      "prompt": "Log what I did today",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-log (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-work-log",
+      "prompt": "Note the decision: we keep the old pricing page",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-log (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-work-log",
+      "prompt": "Print the git log of this repo",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-work-log; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-work-log",
+      "prompt": "Log what I did today with evidence",
+      "should_trigger": true,
+      "expected_output": "Writes one log row per unit of work with evidence, tag and status; decisions and questions in their own tables; does not write the tracker mid-day."
+    }
+  ]
+}

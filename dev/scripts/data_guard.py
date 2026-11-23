@@ -1,4 +1,4 @@
-"""PostToolUse injection screen for web and EntityOS tool output.
+"""PostToolUse injection screen for web and LifeOS entity tool output.
 
 Screens the output with the bundled local model (screen_text.py, passed as the first argument; no network).
 Suspicious: warn Claude with hookSpecificOutput.additionalContext (exit 0). Clean: no output.

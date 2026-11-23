@@ -1,0 +1,40 @@
+{
+  "skill_name": "lifeos-work-writing",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-work-writing",
+      "prompt": "Check this draft for promotional tone",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-writing (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-work-writing",
+      "prompt": "Review my copy before I send it to the client",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-work-writing (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-work-writing",
+      "prompt": "Translate this paragraph into German",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-work-writing; answers normally or points to another tool."
+    },
+    {
+      "id": 4,
+      "skill": "lifeos-work-writing",
+      "prompt": "Add a pattern from this editor correction",
+      "should_trigger": true,
+      "expected_output": "Asks what the correction is an instance of, adds nothing if covered, folds a nuance into an existing entry, or adds one four-part entry; per-business patterns go to LifeOS entity brand context as unverified, never guessed."
+    },
+    {
+      "id": 5,
+      "skill": "lifeos-work-writing",
+      "prompt": "Run the review passes on this draft",
+      "should_trigger": true,
+      "expected_output": "Runs Pass 0 humanization verification, Pass A compliance loop and Pass B reader-comprehension review, and delivers exactly two files, scratchpad.md and session-lessons.md."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "lifeos-entity",
+  "displayName": "LifeOS Entity",
+  "version": "0.6.0",
+  "description": "LifeOS Entity: facts about the owner, brands, people and sources. Needs the core lifeos plugin for the MCP connection and shared rules.",
+  "author": {
+    "name": "@wasimness",
+    "company": "SyncWin",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "homepage": "https://syncwin.com",
+  "repository": "https://github.com/syncwin/lifeos-ai",
+  "license": "MIT",
+  "keywords": [
+    "lifeos",
+    "facts",
+    "clients",
+    "brands",
+    "entity"
+  ],
+  "documentationUrl": "https://github.com/syncwin/lifeos-ai#readme",
+  "supportUrl": "https://github.com/syncwin/lifeos-ai/issues",
+  "privacyPolicyUrl": "https://syncwin.com/privacy-policy/",
+  "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
+  "metadata": {
+    "displayName": "LifeOS Entity",
+    "version": "0.6.0",
+    "releaseStage": "alpha",
+    "author": "@wasimness",
+    "company": "SyncWin",
+    "homepage": "https://syncwin.com",
+    "repository": "https://github.com/syncwin/lifeos-ai",
+    "license": "MIT"
+  }
+}

@@ -1,8 +1,8 @@
 ---
 type: tool_used
 tool: Skill
-input_match: lifeos-moneyos
+input_match: lifeos-money
 min: 1
 ---
 
-The lifeos-moneyos skill loads.
+The lifeos-money skill loads.

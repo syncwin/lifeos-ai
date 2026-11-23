@@ -3,8 +3,8 @@
     {
       "id": "5defde1aebad9c9c67507ebb145c92df",
       "title": "LifeOS",
-      "description": "Run LifeOS for work, devices and life. Say what you want; facts come from your EntityOS.",
-      "content": "# LifeOS\n\nRun /lifeos and do the task below.\n\n* **Task:** `{{task}}`\n* **Module:** `{{module}}`\n* **Business:** `{{business}}`\n* **Files:** `{{files}}`\n* **Details:** `{{details}}`\n\nRules: ask once for anything missing, read owner facts from EntityOS, and show a plan and wait for a yes before anything that creates, changes, sends, publishes or deletes. Route to the chosen stage only and load only the references it needs; this stage gate overrides any skill's own chaining. If a required input is missing, name it and stop. For a business, pick the entity from EntityOS (relation owned or client); \"New business\" runs the add-client recipe first. Sprint and planning stages load the current LifeOS task store first: without it, tasks are silently dropped from the plan.",
+      "description": "Run LifeOS for work, devices and life. Say what you want; facts come from your LifeOS entity data.",
+      "content": "# LifeOS\n\nRun /lifeos and do the task below.\n\n* **Task:** `{{task}}`\n* **Module:** `{{module}}`\n* **Business:** `{{business}}`\n* **Files:** `{{files}}`\n* **Details:** `{{details}}`\n\nRules: ask once for anything missing, read owner facts from LifeOS entity data, and show a plan and wait for a yes before anything that creates, changes, sends, publishes or deletes. Route to the chosen stage only and load only the references it needs; this stage gate overrides any skill's own chaining. If a required input is missing, name it and stop. For a business, pick the entity from LifeOS entity data (relation owned or client); \"New business\" runs the add-client recipe first. Sprint and planning stages load the current LifeOS task store first: without it, tasks are silently dropped from the plan.",
       "variables": {
         "task": {
           "type": "Textarea",
@@ -28,7 +28,7 @@
           "type": "Radio",
           "label": "Business",
           "placeholder": "business",
-          "context": "Auto picks the entity from EntityOS (owned or client). New business runs onboarding first, whatever the stage. All business units is for sprint stages.",
+          "context": "Auto picks the entity from LifeOS entity data (owned or client). New business runs onboarding first, whatever the stage. All business units is for sprint stages.",
           "maxLength": "",
           "required": false,
           "options": "Auto\nNew business (onboarding)\nAll business units (sprint stages)"

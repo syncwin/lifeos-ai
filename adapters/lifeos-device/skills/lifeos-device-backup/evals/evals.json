@@ -1,0 +1,26 @@
+{
+  "skill_name": "lifeos-device-backup",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "lifeos-device-backup",
+      "prompt": "Is my PC backup healthy?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-device-backup (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 2,
+      "skill": "lifeos-device-backup",
+      "prompt": "When was the last backup, and is my data safe?",
+      "should_trigger": true,
+      "expected_output": "Loads lifeos-device-backup (via the lifeos router when needed) and follows its steps."
+    },
+    {
+      "id": 3,
+      "skill": "lifeos-device-backup",
+      "prompt": "Publish my app project to a code host",
+      "should_trigger": false,
+      "expected_output": "Does not load lifeos-device-backup; answers normally or points to another tool."
+    }
+  ]
+}

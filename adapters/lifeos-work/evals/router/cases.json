@@ -1,0 +1,185 @@
+{
+  "_note": "Router cases for this plugin: expected = the skill the routing table in the router skill must pick. Checked by route_check.py.",
+  "cases": [
+    {
+      "prompt": "plan my week for work",
+      "expected": "lifeos-work-sprint"
+    },
+    {
+      "prompt": "what can I deliver by Friday",
+      "expected": "lifeos-work-sprint"
+    },
+    {
+      "prompt": "log what I did today",
+      "expected": "lifeos-work-log"
+    },
+    {
+      "prompt": "note the decision we made",
+      "expected": "lifeos-work-log"
+    },
+    {
+      "prompt": "start my day",
+      "expected": "lifeos-work-report"
+    },
+    {
+      "prompt": "end of day report please",
+      "expected": "lifeos-work-report"
+    },
+    {
+      "prompt": "did that change work",
+      "expected": "lifeos-work-results"
+    },
+    {
+      "prompt": "did it pay off",
+      "expected": "lifeos-work-results"
+    },
+    {
+      "prompt": "my manager sent me a new request",
+      "expected": "lifeos-work-intake"
+    },
+    {
+      "prompt": "add this to my plan",
+      "expected": "lifeos-work-intake"
+    },
+    {
+      "prompt": "should this be a page",
+      "expected": "lifeos-work-demand"
+    },
+    {
+      "prompt": "cluster these keywords for me",
+      "expected": "lifeos-work-demand"
+    },
+    {
+      "prompt": "check this draft",
+      "expected": "lifeos-work-writing"
+    },
+    {
+      "prompt": "is this too promotional",
+      "expected": "lifeos-work-writing"
+    },
+    {
+      "prompt": "open work module",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "show my clients and projects",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "research this topic before we write it",
+      "expected": "lifeos-work-research"
+    },
+    {
+      "prompt": "build a brief for this article",
+      "expected": "lifeos-work-brief"
+    },
+    {
+      "prompt": "on-page SEO for this service page",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "add schema markup and answer capsules",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "humanize this draft",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "this sounds like AI, make this sound human",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "audit my site content using this Search Console export",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "what should I delete or prune across the blog",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "check NAP consistency and the conversion path",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "how is this piece performing after 30 60 90 days",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "why isn't this ranking",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "run a consistency sweep on my listings",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "we are cited but never named in AI answers",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "find me a niche for a new site",
+      "expected": "lifeos-work"
+    },
+    {
+      "prompt": "build the fact table for this brief",
+      "expected": "lifeos-work-research"
+    },
+    {
+      "prompt": "write up a content outline for this topic",
+      "expected": "lifeos-work-brief"
+    },
+    {
+      "prompt": "draft this article from the brief",
+      "expected": "lifeos-work-draft"
+    },
+    {
+      "prompt": "write the draft for the new service page",
+      "expected": "lifeos-work-draft"
+    },
+    {
+      "prompt": "is this ready to publish",
+      "expected": "lifeos-work-review"
+    },
+    {
+      "prompt": "run the final review and the fact-lock on this piece",
+      "expected": "lifeos-work-review"
+    },
+    {
+      "prompt": "do a compliance check before it goes out",
+      "expected": "lifeos-work-review"
+    },
+    {
+      "prompt": "I am not sure where to start today",
+      "expected": "ask"
+    },
+    {
+      "prompt": "can you help me with this",
+      "expected": "ask"
+    },
+    {
+      "prompt": "draft this article for my client",
+      "expected": "lifeos-work-draft"
+    },
+    {
+      "prompt": "content brief for the client project",
+      "expected": "lifeos-work-brief"
+    },
+    {
+      "prompt": "research this topic for a client",
+      "expected": "lifeos-work-research"
+    },
+    {
+      "prompt": "structure this page for me",
+      "expected": "lifeos-work-brief"
+    },
+    {
+      "prompt": "write the body of this page",
+      "expected": "lifeos-work-draft"
+    },
+    {
+      "prompt": "No brief yet, research first",
+      "expected": "lifeos-work-research"
+    }
+  ]
+}
